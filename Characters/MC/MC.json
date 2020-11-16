@@ -1,0 +1,33 @@
+{
+    "color": {
+        "color": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "hsv": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    "equipment": [
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Female_Mage_Top"
+        }
+    ],
+    "name": "Female_Knight",
+    "unit": "Female_Knight"
+}
