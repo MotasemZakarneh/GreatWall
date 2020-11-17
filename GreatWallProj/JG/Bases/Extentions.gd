@@ -118,14 +118,11 @@ static func make_one (v:Vector2):
 static func get_localized_text(text_tables : Array,key : String,lang : String):
 	for t in text_tables:
 		var t_dict : Dictionary= t
-		if not t_dict.has("key") or t_dict["key"] != key:
-			continue
-		var l = "en"
-		
-		if t_dict.has(lang):
-			l = lang
-		
-		return t_dict[l]
+		if t_dict.has("key") and t_dict["key"] == key:
+			var l = "en"
+			if t_dict.has(lang):
+				l = lang
+			return t_dict[l]
 	
 	return "Could Not Text " + key
 
@@ -144,17 +141,17 @@ static func read_file(file_to_read) -> Array:
 static func to_pretty_json(obj):
 	return JSON.print(obj,"\t")
 
-static func get_anims_from_sheet(sheet:Texture,sheet_x_len:int,sheet_y_len:int,x_anim_len:int,y_anim_len:int,anim_type:String):
-	var anims = ["Down","Left","Right","Up","BotLeft","TopLeft","BotRight","TopRight"]
+static func get_anims_from_sheet(sheet:Texture,sheet_x_len:int,sheet_y_len:int,x_anim_len:int,dirs_to_get:int,anim_type:String):
+	var directions = ["Down","Left","Right","Up","BotLeft","TopLeft","BotRight","TopRight"]
 	
 	var single_w = sheet.get_width()/float(sheet_x_len)
 	var single_h = sheet.get_height()/float(sheet_y_len)
 	
 	var ready_anims = []
 	
-	for y in y_anim_len:
+	for y in dirs_to_get:
 		var y_pos = y * single_h
-		var anim_name = anim_type+"_"+anims[y]
+		var anim_name = anim_type+"_"+directions[y]
 		var anim_frames = []
 		
 		for x in x_anim_len:
@@ -171,12 +168,13 @@ static func get_anims_from_sheet(sheet:Texture,sheet_x_len:int,sheet_y_len:int,x
 	
 	return ready_anims
 
-static func get_anims_from_sheet_n(sheet:Texture,sheet_x_len:int,sheet_y_len:int,x_anim_len:int,y_anim_len:int):
+static func get_anims_from_sheet_n(sheet:Texture,sheet_x_len:int,sheet_y_len:int,x_anim_len:int,dirs_to_get:int):
 	var anim_name : String = sheet.resource_path
 	anim_name = anim_name.get_file()
+	if sheet.resource_local_to_scene or ".tres" in anim_name:
+		print(anim_name + " Is Local to source, this could cause issues, replug the textures")
 	anim_name = anim_name.replace("."+anim_name.get_extension(),"")
-	
-	return get_anims_from_sheet(sheet,sheet_x_len,sheet_y_len,x_anim_len,y_anim_len,anim_name)
+	return get_anims_from_sheet(sheet,sheet_x_len,sheet_y_len,x_anim_len,dirs_to_get,anim_name)
 
 static func get_sprite_frames(sheets:Array,sheets_lens,directions_to_get,speeds):
 	var s = SpriteFrames.new()
@@ -186,10 +184,11 @@ static func get_sprite_frames(sheets:Array,sheets_lens,directions_to_get,speeds)
 		var sheet_x_len = sheets_lens[i].x
 		var sheet_y_len = sheets_lens[i].y
 		var anim_x_len = sheet_x_len
-		var anims_y_len = directions_to_get[i]
+		var dirs_to_get = directions_to_get[i]
 		var speed = speeds[i]
 		
-		var anims = get_anims_from_sheet_n(sheet,sheet_x_len,sheet_y_len,anim_x_len,anims_y_len)
+		var anims = get_anims_from_sheet_n(sheet,sheet_x_len,sheet_y_len,anim_x_len,dirs_to_get)
+		
 		for a in anims:
 			var full_anim_name = a["full_anim_name"]
 			var frames = a["frames"]

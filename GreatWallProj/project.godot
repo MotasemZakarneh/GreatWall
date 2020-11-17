@@ -129,6 +129,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://JG/Components/LocalizedText.gd"
 }, {
+"base": "MoveSystem",
+"class": "MoveInputReader",
+"language": "GDScript",
+"path": "res://JG/Movement/MoveInputReader.gd"
+}, {
 "base": "JG",
 "class": "MoveSystem",
 "language": "GDScript",
@@ -339,6 +344,7 @@ _global_script_class_icons={
 "JG": "",
 "KinematicMove": "",
 "LocalizedText": "",
+"MoveInputReader": "",
 "MoveSystem": "",
 "Mover": "",
 "PlatformerMove": "",
@@ -381,6 +387,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Great Wall"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [rendering]

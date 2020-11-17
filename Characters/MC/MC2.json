@@ -1,0 +1,63 @@
+{
+    "color": {
+        "color": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "hsv": [
+            1.0000001192092896,
+            1.0,
+            1.0
+        ]
+    },
+    "equipment": [
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Female_Assassin_Bottom"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Female_Rogue_Top"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Female_Musketeer_Hair"
+        }
+    ],
+    "name": "Female_Battleguard",
+    "unit": "Female_Battleguard"
+}

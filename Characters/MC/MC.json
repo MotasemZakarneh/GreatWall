@@ -6,7 +6,7 @@
             1.0
         ],
         "hsv": [
-            1.0,
+            1.0000001192092896,
             1.0,
             1.0
         ]
@@ -25,9 +25,69 @@
                     1.0
                 ]
             },
-            "unit": "Female_Mage_Top"
+            "unit": "Medieval_Interiors_Female_Bottom_1"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Bottom_2"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Top_4"
+        },
+        {
+            "color": {
+                "color": [
+                    0.699999988079071,
+                    0.699999988079071,
+                    0.699999988079071
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Top_2"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    0.800000011920929,
+                    1.2000000476837158
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_TC_Female_Hair_7"
         }
     ],
-    "name": "Female_Knight",
-    "unit": "Female_Knight"
+    "name": "Medieval_TC_Female_1",
+    "unit": "Medieval_TC_Female_1"
 }

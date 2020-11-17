@@ -1,0 +1,123 @@
+{
+    "color": {
+        "color": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "hsv": [
+            1.0000001192092896,
+            1.0,
+            1.0
+        ]
+    },
+    "equipment": [
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Top_2"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Feet_2"
+        },
+        {
+            "color": {
+                "color": [
+                    1.100000023841858,
+                    0.6999999284744263,
+                    0.6999999284744263
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Hair_1"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Head_3"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_Interiors_Female_Bottom_2"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_TC_Female_Accessory_6"
+        },
+        {
+            "color": {
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "hsv": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "unit": "Medieval_TC_Female_Accessory_4"
+        }
+    ],
+    "name": "Medieval_TC_Female_1",
+    "unit": "Medieval_TC_Female_1"
+}
