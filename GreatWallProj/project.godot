@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://JG/SaveLoad System/Core/GameSavable.gd"
 }, {
+"base": "Node2D",
+"class": "GateWayToPlayer",
+"language": "GDScript",
+"path": "res://Networking/GateWayToPlayer.gd"
+}, {
 "base": "InteractionSystem",
 "class": "GlobalCondsSource",
 "language": "GDScript",
@@ -264,6 +269,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://JG/Components/SceneActivator.gd"
 }, {
+"base": "Node2D",
+"class": "ServerClientBridge",
+"language": "GDScript",
+"path": "res://Networking/ServerClientBridge.gd"
+}, {
 "base": "WeaponSystem",
 "class": "Shooter",
 "language": "GDScript",
@@ -318,6 +328,11 @@ _global_script_classes=[ {
 "class": "WeaponSystem",
 "language": "GDScript",
 "path": "res://JG/Bases/WeaponSystem.gd"
+}, {
+"base": "Node2D",
+"class": "WorldServer",
+"language": "GDScript",
+"path": "res://Networking/WorldServer.gd"
 } ]
 _global_script_class_icons={
 "ADRotate": "",
@@ -333,6 +348,7 @@ _global_script_class_icons={
 "FaceMouse": "",
 "FollowTarget": "",
 "GameSavable": "",
+"GateWayToPlayer": "",
 "GlobalCondsSource": "",
 "Health": "",
 "HealthSystem": "",
@@ -371,6 +387,7 @@ _global_script_class_icons={
 "SaveLoadJson": "",
 "SaveLoadSystem": "",
 "SceneActivator": "",
+"ServerClientBridge": "",
 "Shooter": "",
 "SimpleComponent": "",
 "SimpleSaver": "",
@@ -381,7 +398,8 @@ _global_script_class_icons={
 "TopDownISO": "",
 "TorqueRotate": "",
 "WASDMove": "",
-"WeaponSystem": ""
+"WeaponSystem": "",
+"WorldServer": ""
 }
 
 [application]
@@ -389,6 +407,10 @@ _global_script_class_icons={
 config/name="Great Wall"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+NetworkHead="*res://Networking/NetworkHead.tscn"
 
 [rendering]
 

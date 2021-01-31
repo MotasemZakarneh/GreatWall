@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "AuthToGateWay",
+"language": "GDScript",
+"path": "res://Scenes/AuthToGateWay.gd"
+}, {
+"base": "Node2D",
+"class": "GateWayToPlayer",
+"language": "GDScript",
+"path": "res://Scenes/GateWayToPlayer.gd"
+} ]
+_global_script_class_icons={
+"AuthToGateWay": "",
+"GateWayToPlayer": ""
+}
+
+[application]
+
+config/name="GreatWallGateWay"
+run/main_scene="res://GatewayApp.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+NetworkHead="*res://Scenes/NetworkHead.tscn"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

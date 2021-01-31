@@ -93,6 +93,15 @@ static func test_groups_on_node(node:Node,groups:Array):
 			return true
 	return false
 
+static func get_sibling_node(the_node:Node,sibling_name):
+	var par = the_node.get_parent()
+	if par == null:
+		return null
+	if not par.has_node(str(sibling_name)):
+		return null
+	
+	return par.get_node(str(sibling_name))
+
 static func clamp_magnitude(v1:Vector2,length:float):
 	if(v1.length()<=length):
 		return v1
@@ -184,7 +193,7 @@ static func get_sprite_frames(sheets:Array,sheets_lens,directions_to_get,speeds)
 		var sheet_x_len = sheets_lens[i].x
 		var sheet_y_len = sheets_lens[i].y
 		var anim_x_len = sheet_x_len
-		var dirs_to_get = directions_to_get[i]
+		var dirs_to_get = directions_to_get
 		var speed = speeds[i]
 		
 		var anims = get_anims_from_sheet_n(sheet,sheet_x_len,sheet_y_len,anim_x_len,dirs_to_get)
