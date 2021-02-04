@@ -1,3 +1,13 @@
 [gd_scene format=2]
 
 [node name="WorldServerApp" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 359.0
+margin_top = 132.0
+margin_right = 751.0
+margin_bottom = 269.0
+text = "World Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}

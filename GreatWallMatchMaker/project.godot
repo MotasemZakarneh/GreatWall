@@ -1,0 +1,70 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Extentions",
+"language": "GDScript",
+"path": "res://SymScripts/Extentions.gd"
+}, {
+"base": "Node2D",
+"class": "MatchMakerData",
+"language": "GDScript",
+"path": "res://Data/MatchMakerData.gd"
+}, {
+"base": "Node2D",
+"class": "MatchMakerToPlayer",
+"language": "GDScript",
+"path": "res://Networking/MatchMakerToPlayer.gd"
+}, {
+"base": "Node2D",
+"class": "MatchMakerToWorld",
+"language": "GDScript",
+"path": "res://Networking/MatchMakerToWorld.gd"
+}, {
+"base": "Node2D",
+"class": "MatchesOrganizer",
+"language": "GDScript",
+"path": "res://Networking/MatchesOrganizer.gd"
+}, {
+"base": "Node",
+"class": "SimpleSaver",
+"language": "GDScript",
+"path": "res://SymScripts/SimpleSaver.gd"
+} ]
+_global_script_class_icons={
+"Extentions": "",
+"MatchMakerData": "",
+"MatchMakerToPlayer": "",
+"MatchMakerToWorld": "",
+"MatchesOrganizer": "",
+"SimpleSaver": ""
+}
+
+[application]
+
+config/name="GreatWallMatchMaker"
+run/main_scene="res://MatchMakerApp.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+NetworkHead="*res://Networking/NetworkHead.tscn"
+
+[locale]
+
+locale_filter=[ 0, [  ] ]
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

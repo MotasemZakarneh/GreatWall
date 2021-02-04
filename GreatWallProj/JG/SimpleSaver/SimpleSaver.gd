@@ -1,4 +1,4 @@
-extends JG
+extends Node
 class_name SimpleSaver
 
 """
@@ -8,8 +8,11 @@ add this node to the node tree and use set_var/get_var
 """
 
 const def_file_name = "SimpleData.dat"
+const def_dir = "user://"
+
 export var file_name = def_file_name
-const dir = "user://"
+export var dir_name = def_dir
+
 
 func _ready():
 	if not is_in_group("Simple Saver"):
@@ -68,6 +71,21 @@ func safe_get_var(key,def_val):
 		v = def_val
 	return v
 
+func reset_file_to_defaults():
+	dir_name = def_dir
+	file_name = def_file_name
+	pass
+
+func assign_file(full_file_path : String):
+	dir_name = full_file_path.get_base_dir()
+	file_name = full_file_path.get_file()
+	pass
+
+func assign_file_parts(dir_name:String,file_name:String):
+	self.dir_name = dir_name
+	self.file_name = file_name
+	pass
+
 static func write_to_file(inst,json_string):
 	var file_path = get_file_path(inst)
 	var file = File.new()
@@ -79,7 +97,6 @@ static func write_to_file(inst,json_string):
 static func get_data(inst):
 	var file_path = get_file_path(inst)
 	var data = {} 
-	
 	var file = File.new()
 	if not file.file_exists(file_path):
 		return data
@@ -101,8 +118,11 @@ static func get_data(inst):
 
 static func get_file_path(inst):
 	var f = def_file_name
+	var d = def_dir
 	
 	if inst!=null:
 		f = inst.file_name
+		d = inst.dir_name
 	
-	return dir.plus_file(f)
+	return d.plus_file(f)
+

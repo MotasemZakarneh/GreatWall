@@ -43,7 +43,6 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 position = Vector2( 0, -50 )
 frames = SubResource( 4 )
-frame = 2
 playing = true
 
 [node name="MoveInputReader" type="Node2D" parent="KinematicBody2D"]

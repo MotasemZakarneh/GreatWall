@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Networking/NetworkHead.gd" type="Script" id=1]
+[ext_resource path="res://Networking/MatchMakerToPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Data/MatchMakerData.gd" type="Script" id=3]
+[ext_resource path="res://Networking/MatchMakerToWorld.gd" type="Script" id=4]
+[ext_resource path="res://SymScripts/SimpleSaver.gd" type="Script" id=5]
+[ext_resource path="res://Networking/MatchesOrganizer.gd" type="Script" id=6]
+
+[node name="NetworkHead" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="MatchMakerToPlayer" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="MatchMakerToWorld" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="MatchMakerData" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="MatchesOrganizer" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="SimpleSaver" type="Node" parent="."]
+script = ExtResource( 5 )

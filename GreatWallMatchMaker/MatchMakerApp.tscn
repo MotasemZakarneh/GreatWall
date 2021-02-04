@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="MatchMakerApp" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 290.0
+margin_top = 147.0
+margin_right = 719.0
+margin_bottom = 298.0
+text = "Lobby"
+__meta__ = {
+"_edit_use_anchors_": false
+}
