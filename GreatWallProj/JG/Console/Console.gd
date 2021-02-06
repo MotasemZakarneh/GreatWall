@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name Console
 
-export var start_focus = true
+export var activate_on_start = true
 export var group_name = "Console"
 signal on_entered_command(command)
 var line : LineEdit
@@ -16,8 +16,8 @@ func _ready():
 	var _er = line.connect("text_entered",self,"_on_send_command")
 	add_to_group(group_name)
 	write_line("Console Initialized")
-	panel.visible = start_focus
-	if start_focus:
+	panel.visible = activate_on_start
+	if activate_on_start:
 		line.grab_focus()
 	pass
 
