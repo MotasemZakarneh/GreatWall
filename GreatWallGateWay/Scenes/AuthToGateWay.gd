@@ -41,5 +41,5 @@ func cs_authenticate_player(username,password,player_id):
 
 remote func r_authenticate_player(result,player_id):
 	print("Authenticated Player Of ID : " + str(player_id))
-	get_parent().get_node("GateWayToPlayer").r_login_request(result,player_id)
+	NetworkHead.gateway_to_player.r_login_request(result,player_id)
 	pass

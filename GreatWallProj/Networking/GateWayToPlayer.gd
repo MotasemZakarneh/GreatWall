@@ -12,6 +12,8 @@ var mp : MultiplayerAPI
 export var port = 1910
 export var ip = "127.0.0.1"
 
+signal on_verfication_completed(result)
+
 var last_username
 var last_password
 
@@ -63,4 +65,9 @@ remote func r_login_request(result):
 	print("Login Request Result Was  " + str(result))
 	network.disconnect("connection_succeeded",self,"_on_connected_to_server")
 	network.disconnect("connection_failed",self,"_on_connection_failed")
+	emit_signal("on_verfication_completed",result)
+	
+	if result:
+		NetworkHead.matchmaker_to_player.connect_to_matchmatcher()
+	
 	pass

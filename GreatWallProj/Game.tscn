@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Art/MC_2_Idle.png" type="Texture" id=1]
 [ext_resource path="res://Networking/LoginMenu.gd" type="Script" id=2]
 [ext_resource path="res://JG/TopDownIso/CharaAnimatorISO.gd" type="Script" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://JG/Movement/MoveInputReader.gd" type="Script" id=6]
 [ext_resource path="res://Art/MC.tres" type="Resource" id=7]
 
@@ -43,10 +44,53 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 position = Vector2( 0, -50 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="MoveInputReader" type="Node2D" parent="KinematicBody2D"]
 script = ExtResource( 6 )
 
-[node name="LoginMenu" type="Node2D" parent="."]
+[node name="LoginMenu" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
+
+[node name="LoginContainer" type="Container" parent="LoginMenu"]
+margin_right = 146.0
+margin_bottom = 54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="LoginMenu/LoginContainer"]
+margin_right = 143.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="LoginMenu/LoginContainer"]
+margin_left = 0.891891
+margin_top = 28.541
+margin_right = 141.892
+margin_bottom = 48.541
+text = "Login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Status" type="Label" parent="LoginMenu"]
+margin_left = 4.0
+margin_top = 56.0
+margin_right = 141.0
+margin_bottom = 104.0
+text = "Not Logged In"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 123.228, -80.2441 )
+texture = ExtResource( 5 )
+[connection signal="text_changed" from="LoginMenu/LoginContainer/LineEdit" to="LoginMenu" method="_on_LineEdit_text_changed"]
+[connection signal="button_up" from="LoginMenu/LoginContainer/Button" to="LoginMenu" method="_on_Button_button_up"]

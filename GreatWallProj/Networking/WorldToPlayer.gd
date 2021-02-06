@@ -1,5 +1,5 @@
 extends Node2D
-class_name WorldServer
+class_name WorldToPlayer
 
 """
 Player App:

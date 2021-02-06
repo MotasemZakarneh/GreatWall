@@ -44,6 +44,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://JG/Interactable System/Core/Condition.gd"
 }, {
+"base": "CanvasLayer",
+"class": "Console",
+"language": "GDScript",
+"path": "res://JG/Console/Console.gd"
+}, {
+"base": "Object",
+"class": "ConsoleLoader",
+"language": "GDScript",
+"path": "res://JG/Console/ConsoleLoader.gd"
+}, {
 "base": "Object",
 "class": "Damager",
 "language": "GDScript",
@@ -133,6 +143,11 @@ _global_script_classes=[ {
 "class": "LocalizedText",
 "language": "GDScript",
 "path": "res://JG/Components/LocalizedText.gd"
+}, {
+"base": "Node2D",
+"class": "MatchMakerToPlayer",
+"language": "GDScript",
+"path": "res://Networking/MatchMakerToPlayer.gd"
 }, {
 "base": "MoveSystem",
 "class": "MoveInputReader",
@@ -284,7 +299,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://JG/Components/SimpleComponent.gd"
 }, {
-"base": "JG",
+"base": "Node",
 "class": "SimpleSaver",
 "language": "GDScript",
 "path": "res://JG/SimpleSaver/SimpleSaver.gd"
@@ -330,9 +345,9 @@ _global_script_classes=[ {
 "path": "res://JG/Bases/WeaponSystem.gd"
 }, {
 "base": "Node2D",
-"class": "WorldServer",
+"class": "WorldToPlayer",
 "language": "GDScript",
-"path": "res://Networking/WorldServer.gd"
+"path": "res://Networking/WorldToPlayer.gd"
 } ]
 _global_script_class_icons={
 "ADRotate": "",
@@ -342,6 +357,8 @@ _global_script_class_icons={
 "Bullet": "",
 "CharaAnimData": "",
 "Condition": "",
+"Console": "",
+"ConsoleLoader": "",
 "Damager": "",
 "DamagerNode": "",
 "Extentions": "",
@@ -360,6 +377,7 @@ _global_script_class_icons={
 "JG": "",
 "KinematicMove": "",
 "LocalizedText": "",
+"MatchMakerToPlayer": "",
 "MoveInputReader": "",
 "MoveSystem": "",
 "Mover": "",
@@ -399,7 +417,7 @@ _global_script_class_icons={
 "TorqueRotate": "",
 "WASDMove": "",
 "WeaponSystem": "",
-"WorldServer": ""
+"WorldToPlayer": ""
 }
 
 [application]

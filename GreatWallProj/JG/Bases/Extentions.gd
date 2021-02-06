@@ -247,3 +247,24 @@ static func set_collision_state(node:Node,state:bool):
 	for c in children:
 		c.set_deferred("disabled",!state)
 	pass
+
+static func is_key_pressed(ev, key):
+	if ev is InputEventKey and ev.scancode == key:
+		return true
+	return false
+
+static func is_key_pressed_forced(ev,key):
+	if ev is InputEventKey and Input.is_key_pressed(key):
+		return true
+	return false
+
+static func is_key_pressed_up(ev,key):
+	if ev is InputEventKey and ev.scancode == key and not ev.echo:
+		return true
+	return false
+
+static func get_colored_text(new_text:String,col:Color):
+	var start = "[color=#"+str(col.to_html())+"]"
+	var end = "[/color]"
+	var total = start+new_text+end
+	return total

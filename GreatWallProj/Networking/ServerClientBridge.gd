@@ -11,7 +11,7 @@ func is_networked()->bool:
 	return server.is_networked
 
 func _ready():
-	server = NetworkHead.world_server
+	server = NetworkHead.world_to_player
 	pass
 
 func _process(delta):

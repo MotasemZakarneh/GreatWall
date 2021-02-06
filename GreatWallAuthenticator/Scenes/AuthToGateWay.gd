@@ -41,8 +41,9 @@ func _on_client_disconnected(gateway_id):
 	pass
 
 remote func s_authenticate_player(_username,_password,player_id):
-	print("Trying To Authenticate Player " + str(player_id))
+	print("Trying To Authenticate Player " + str(_username))
 	var gateway_id = get_tree().get_rpc_sender_id()
 	var result = true
+	#TODO: Implement, proper verfication
 	rpc_id(gateway_id,"r_authenticate_player",result,player_id)
-	#TODO: Implement, Send Back To The Gateway App, with the result
+	pass

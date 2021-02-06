@@ -54,8 +54,8 @@ func _on_client_disconnected(player_id):
 
 remote func s_login_request(username,password):
 	print("Gateway App :: Login Request Recieved ")
-	var id = custom_multiplayer.get_rpc_sender_id()
-	NetworkHead.auth_to_gateway.cs_authenticate_player(username,password,id)
+	var player_id = custom_multiplayer.get_rpc_sender_id()
+	NetworkHead.auth_to_gateway.cs_authenticate_player(username,password,player_id)
 	pass
 
 func r_login_request(result,player_id):
