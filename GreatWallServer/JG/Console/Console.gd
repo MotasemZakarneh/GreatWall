@@ -19,7 +19,6 @@ func _ready():
 	panel.visible = activate_on_start
 	if activate_on_start:
 		line.grab_focus()
-	_er = connect("on_entered_command",self,"_on_command_entered")
 	pass
 
 func _input(ev):
@@ -76,11 +75,4 @@ func request_switch():
 	if $Cont/Panel.visible:
 		line.grab_focus()
 	line.text = ""
-	pass
-
-func _on_command_entered(command : String):
-	if command == "clear" or command == "cls":
-		written_lines.clear()
-		label.bbcode_text = ""
-		write_line(command)
 	pass

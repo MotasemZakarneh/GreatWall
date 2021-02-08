@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scenes/AuthToGateWay.gd"
 }, {
+"base": "CanvasLayer",
+"class": "Console",
+"language": "GDScript",
+"path": "res://JG/Console/Console.gd"
+}, {
+"base": "Object",
+"class": "ConsoleLoader",
+"language": "GDScript",
+"path": "res://JG/Console/ConsoleLoader.gd"
+}, {
 "base": "Node2D",
 "class": "GateWayToPlayer",
 "language": "GDScript",
@@ -21,6 +31,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AuthToGateWay": "",
+"Console": "",
+"ConsoleLoader": "",
 "GateWayToPlayer": ""
 }
 
