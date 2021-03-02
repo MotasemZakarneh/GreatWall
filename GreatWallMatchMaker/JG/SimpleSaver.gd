@@ -47,7 +47,7 @@ func set_var(key,val):
 	
 	var json_string = Extentions.to_pretty_json(data)
 	write_to_file(self,json_string)
-	pass
+	return json_string
 
 func get_var(key):
 	var data = get_data(self)
@@ -63,6 +63,14 @@ func get_var(key):
 	
 	var val = data[key]
 	return val
+
+func has_var(key):
+	var data = get_data(self)
+	if data.size() == 0:
+		return false
+	if not data.keys().has(key):
+		return false
+	return true
 
 func safe_get_var(key,def_val):
 	var v = get_var(key)
@@ -81,9 +89,17 @@ func assign_file(full_file_path : String):
 	file_name = full_file_path.get_file()
 	pass
 
-func assign_file_parts(dir_name:String,file_name:String):
-	self.dir_name = dir_name
-	self.file_name = file_name
+func assign_file_parts(_dir_name:String,_file_name:String):
+	self.dir_name = _dir_name
+	self.file_name = _file_name
+	pass
+
+func get_data_self():
+	return get_data(self)
+
+func set_data_self(data):
+	var d = Extentions.to_pretty_json(data)
+	write_to_file(self,d)
 	pass
 
 static func write_to_file(inst,json_string):
@@ -109,7 +125,7 @@ static func get_data(inst):
 	var json_string : String = file.get_as_text()
 	file.close()
 	
-	if(json_string.length() == 0):
+	if(json_string.length() == 0 or json_string.length() <= 2):
 		#print("There is no stored data In File")
 		return data
 	

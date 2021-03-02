@@ -24,16 +24,40 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://JG/Console/ConsoleLoader.gd"
 }, {
+"base": "Resource",
+"class": "ConsoleStatics",
+"language": "GDScript",
+"path": "res://JG/Console/ConsoleStatics.gd"
+}, {
+"base": "Node",
+"class": "Extentions",
+"language": "GDScript",
+"path": "res://JG/Extentions.gd"
+}, {
+"base": "Node",
+"class": "GConstants",
+"language": "GDScript",
+"path": "res://GConstants.gd"
+}, {
 "base": "Node2D",
 "class": "GateWayToPlayer",
 "language": "GDScript",
 "path": "res://Scenes/GateWayToPlayer.gd"
+}, {
+"base": "Node",
+"class": "SimpleSaver",
+"language": "GDScript",
+"path": "res://JG/SimpleSaver.gd"
 } ]
 _global_script_class_icons={
 "AuthToGateWay": "",
 "Console": "",
 "ConsoleLoader": "",
-"GateWayToPlayer": ""
+"ConsoleStatics": "",
+"Extentions": "",
+"GConstants": "",
+"GateWayToPlayer": "",
+"SimpleSaver": ""
 }
 
 [application]

@@ -211,7 +211,8 @@ static func get_sprite_frames(sheets:Array,sheets_lens,directions_to_get,speeds)
 	
 	return s
 
-static func get_sprite_frames_d(data:CharaAnimData):
+#Should Be Of Type : CharaAnimData
+static func get_sprite_frames_d(data):
 	var anims = data
 	return get_sprite_frames(anims.texes,anims.texes_lengths,anims.directions_to_get,anims.speeds)
 
@@ -268,3 +269,14 @@ static func get_colored_text(new_text:String,col:Color):
 	var end = "[/color]"
 	var total = start+new_text+end
 	return total
+
+static func get_user_dir(dir_name):
+	var gl : = ProjectSettings.globalize_path("user://")
+	gl = gl.get_base_dir().get_base_dir().plus_file(dir_name)
+	var dir = Directory.new()
+	if not dir.dir_exists(gl):
+		print(dir_name + " directory not found, creating it automatically at " + gl)
+		var _er = dir.make_dir_recursive(gl)
+		if _er != OK:
+			print("Error, Creating, Dir Manually " +str(_er))
+	return gl

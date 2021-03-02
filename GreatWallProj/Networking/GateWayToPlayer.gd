@@ -12,10 +12,14 @@ var mp : MultiplayerAPI
 export var port = 1910
 export var ip = "127.0.0.1"
 
-signal on_verfication_completed(result)
-
 var last_username
 var last_password
+var last_recieved_token = ""
+var console : Console
+
+func _ready():
+	console = ConsoleLoader.get_main(self)
+	pass
 
 func _process(_delta):
 	if get_custom_multiplayer() == null:
@@ -33,18 +37,18 @@ func _start_client():
 	custom_multiplayer.set_root_node(self)
 	custom_multiplayer.set_network_peer(network)
 	
-	print ("ClientApp :: Client To Gateway :: Has Started")
+	console.write ("ClientApp :: Client To Gateway :: Has Started")
 	_er = network.connect("connection_succeeded",self,"_on_connected_to_server")
 	_er = network.connect("connection_failed",self,"_on_connection_failed")
 	pass
 
 func _on_connected_to_server():
-	print("Client App: Connected To Gateway, Sending Login Reqeuest")
+	console.write("Client App: Connected To Gateway, Sending Login Reqeuest")
 	cs_login_request()
 	pass
 
 func _on_connection_failed():
-	print("Failed to connect to server")
+	console.write("Failed to connect to server")
 	network.disconnect("connection_succeeded",self,"_on_connected_to_server")
 	network.disconnect("connection_failed",self,"_on_connection_failed")
 	pass
@@ -61,13 +65,13 @@ func cs_login_request():
 	last_password = ""
 	pass
 
-remote func r_login_request(result):
-	print("Login Request Result Was  " + str(result))
+remote func r_login_request(result,token):
+	console.write("Login Request Result Was  " + str(result))
 	network.disconnect("connection_succeeded",self,"_on_connected_to_server")
 	network.disconnect("connection_failed",self,"_on_connection_failed")
-	emit_signal("on_verfication_completed",result)
 	
 	if result:
+		last_recieved_token = token
 		NetworkHead.matchmaker_to_player.connect_to_matchmatcher()
 	
 	pass

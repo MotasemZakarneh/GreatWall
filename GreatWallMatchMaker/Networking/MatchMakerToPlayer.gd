@@ -8,21 +8,19 @@ Responsible for:
 	match making between players, and creating gameservers
 """
 
+export var requests_clean_up_time = 30
 export var port = 1913
 export var max_players = 4000
-export var is_in_editor = false
 
 var network : NetworkedMultiplayerENet
 var unmatched_players = []
 var matched_players = []
+var expected_players = []
+var console : Console
 
 func _ready():
+	console = ConsoleLoader.get_main(self)
 	_start_server()
-	pass
-
-func _process(_delta):
-	if Input.is_action_just_released("ui_accept"):
-		_create_world()
 	pass
 
 func _start_server():
@@ -31,9 +29,11 @@ func _start_server():
 	
 	if _er == OK:
 		get_tree().network_peer = network
-		print("MatchMakerApp: ServerToPlayer Created Successfully")
+		multiplayer.set_root_node(self)
+		
+		console.write("MatchMakerApp: ServerToPlayer Created Successfully")
 	else:
-		print("MatchMakerApp: ServerToPlayer Failed To Be Created Because " + str(_er))
+		console.write_warn("MatchMakerApp: ServerToPlayer Failed To Be Created Because " + str(_er))
 	
 	_er = network.connect("peer_connected",self,"_on_player_connected")
 	_er = network.connect("peer_disconnected",self,"_on_player_disconnected")
@@ -41,7 +41,7 @@ func _start_server():
 	pass
 
 func _on_player_connected(_player_id):
-	print("MatchMakerApp:: Player " + str(_player_id) + " :: Has Connected")
+	console.write("Player " + str(_player_id) + " :: Has Connected")
 	unmatched_players.append(_player_id)
 	
 	if unmatched_players.size() == 2:
@@ -49,27 +49,40 @@ func _on_player_connected(_player_id):
 	pass
 
 func _on_player_disconnected(_player_id):
-	print("MatchMakerApp:: Player " + str(_player_id) + " :: Has DisConnected")
-	unmatched_players.remove(_player_id)
+	console.write("Player " + str(_player_id) + " :: Has DisConnected")
+	unmatched_players.erase(_player_id)
 	pass
 
 func _match_make_players():
 	
 	pass
 
-func _create_world():
-	if is_in_editor:
-		return
-	var build_path = NetworkHead.match_maker_data.world_app_path
-	var f = File.new()
+func expect_player(token):
+	console.write("Start Expecting Player " + str(token))
+	expected_players.append(token)
+	yield(get_tree().create_timer(requests_clean_up_time),"timeout")
+	if expected_players.has(token):
+		console.write("Stopped Expecting " + str(token))
+		expected_players.erase(token)
+	pass
+
+remote func c_try_login(token):
+	var sender = get_tree().get_rpc_sender_id()
+	console.write("Recieved, Login Request " + str(token))
+	var result = false
+	var match_name = ""
+	var match_port = 0
 	
-	var build_exists = f.file_exists(build_path)
+	if expected_players.has(token):
+		expected_players.erase(token)
+		result = true
+		var m = yield(NetworkHead.match_maker_data.get_first_joinable_match(),"completed")
+		match_name = m["match_name"]
+		match_port = m["port"]
 	
-	if not build_exists:
-		print("Executbile Of Game world does not exist " + build_path)
-		return
+	console.write("Result, of login request " + str(result))
 	
-	print("Openig Executible Of Game World :: " + build_path)
-	var output = []
-	var _res = OS.execute(build_path,[],false,output)
+	rpc_id(sender,"r_try_login",result,match_name,match_port)
+	
+	network.disconnect_peer(sender)
 	pass

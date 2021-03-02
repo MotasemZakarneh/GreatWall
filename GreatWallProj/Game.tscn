@@ -54,8 +54,10 @@ script = ExtResource( 6 )
 script = ExtResource( 2 )
 
 [node name="LoginContainer" type="Container" parent="LoginMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -54.0
 margin_right = 146.0
-margin_bottom = 54.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,10 +80,12 @@ __meta__ = {
 }
 
 [node name="Status" type="Label" parent="LoginMenu"]
-margin_left = 4.0
-margin_top = 56.0
-margin_right = 141.0
-margin_bottom = 104.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 1.33484
+margin_top = -100.726
+margin_right = 138.335
+margin_bottom = -52.7261
 text = "Not Logged In"
 align = 1
 valign = 1

@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "AuthToWorld",
-"language": "GDScript",
-"path": "res://Server/AuthToWorld.gd"
-}, {
 "base": "CanvasLayer",
 "class": "Console",
 "language": "GDScript",
@@ -24,28 +19,39 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://JG/Console/ConsoleLoader.gd"
 }, {
+"base": "Resource",
+"class": "ConsoleStatics",
+"language": "GDScript",
+"path": "res://JG/Console/ConsoleStatics.gd"
+}, {
 "base": "Node",
 "class": "Extentions",
 "language": "GDScript",
-"path": "res://SymScripts/Extentions.gd"
+"path": "res://JG/Extentions.gd"
+}, {
+"base": "Node",
+"class": "GConstants",
+"language": "GDScript",
+"path": "res://GConstants.gd"
+}, {
+"base": "Node",
+"class": "SimpleSaver",
+"language": "GDScript",
+"path": "res://JG/SimpleSaver.gd"
 }, {
 "base": "Node2D",
-"class": "ServerClientBridge",
+"class": "WorldToPlayer",
 "language": "GDScript",
-"path": "res://Server/ServerClientBridge.gd"
-}, {
-"base": "Node2D",
-"class": "WorldServer",
-"language": "GDScript",
-"path": "res://Server/WorldServer.gd"
+"path": "res://Server/WorldToPlayer.gd"
 } ]
 _global_script_class_icons={
-"AuthToWorld": "",
 "Console": "",
 "ConsoleLoader": "",
+"ConsoleStatics": "",
 "Extentions": "",
-"ServerClientBridge": "",
-"WorldServer": ""
+"GConstants": "",
+"SimpleSaver": "",
+"WorldToPlayer": ""
 }
 
 [application]

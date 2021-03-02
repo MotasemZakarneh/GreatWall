@@ -210,7 +210,8 @@ static func get_sprite_frames(sheets:Array,sheets_lens,directions_to_get,speeds)
 		pass
 	
 	return s
-#Data Must Be Of Type : CharaAnimData
+
+#Should Be Of Type : CharaAnimData
 static func get_sprite_frames_d(data):
 	var anims = data
 	return get_sprite_frames(anims.texes,anims.texes_lengths,anims.directions_to_get,anims.speeds)
@@ -247,3 +248,35 @@ static func set_collision_state(node:Node,state:bool):
 	for c in children:
 		c.set_deferred("disabled",!state)
 	pass
+
+static func is_key_pressed(ev, key):
+	if ev is InputEventKey and ev.scancode == key:
+		return true
+	return false
+
+static func is_key_pressed_forced(ev,key):
+	if ev is InputEventKey and Input.is_key_pressed(key):
+		return true
+	return false
+
+static func is_key_pressed_up(ev,key):
+	if ev is InputEventKey and ev.scancode == key and not ev.echo:
+		return true
+	return false
+
+static func get_colored_text(new_text:String,col:Color):
+	var start = "[color=#"+str(col.to_html())+"]"
+	var end = "[/color]"
+	var total = start+new_text+end
+	return total
+
+static func get_user_dir(dir_name):
+	var gl : = ProjectSettings.globalize_path("user://")
+	gl = gl.get_base_dir().get_base_dir().plus_file(dir_name)
+	var dir = Directory.new()
+	if not dir.dir_exists(gl):
+		print(dir_name + " directory not found, creating it automatically at " + gl)
+		var _er = dir.make_dir_recursive(gl)
+		if _er != OK:
+			print("Error, Creating, Dir Manually " +str(_er))
+	return gl
