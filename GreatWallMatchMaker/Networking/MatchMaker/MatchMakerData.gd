@@ -7,7 +7,6 @@ onready var statics_saver = $Savers/StaticsSaver
 onready var dynamics_saver = $Savers/DynamicsSaver
 onready var matches_saver = $Savers/MatchesSaver
 
-var server_data_dir = ""
 var clean_world_ports = []
 var used_world_ports = []
 
@@ -20,15 +19,13 @@ func _ready():
 	
 	yield(get_tree(),"idle_frame")
 	
-	$ServerBuildHelper.set_up(statics_saver,server_data_dir)
+	$ServerBuildHelper.set_up(statics_saver)
 	pass
 
 func _setup_savers():
-	server_data_dir = GConstants.get_server_data_dir()
-	
-	dynamics_saver.assign_file_parts(server_data_dir,GConstants.dynamics_file_name)
-	statics_saver.assign_file_parts(server_data_dir,GConstants.statics_file_name)
-	matches_saver.assign_file_parts(server_data_dir,GConstants.matches_file_name)
+	dynamics_saver.assign_file(GConstants.dynamics_file_name)
+	statics_saver.assign_file(GConstants.statics_file_name)
+	matches_saver.assign_file(GConstants.matches_file_name)
 	pass
 
 func get_first_joinable_match()->Dictionary:

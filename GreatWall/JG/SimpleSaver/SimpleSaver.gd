@@ -135,9 +135,12 @@ static func get_data(inst):
 static func get_file_path(inst):
 	var f = def_file_name
 	var d = def_dir
-	
 	if inst!=null:
 		f = inst.file_name
 		d = inst.dir_name
+	if d == null || d == "":
+		d = def_dir
+	if f == null or f == "":
+		f = def_file_name
 	var total_file_path = d.plus_file(f)
 	return total_file_path

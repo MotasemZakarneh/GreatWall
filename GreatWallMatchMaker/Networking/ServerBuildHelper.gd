@@ -4,11 +4,11 @@ export var is_in_editor = false
 var world_app_path = ""
 var console : Console
 
-func set_up(statics_saver,server_data_dir):
+func set_up(statics_saver):
 	console = ConsoleLoader.get_main(self)
 	world_app_path = statics_saver.get_var("game_wolrds_paths")
-	server_data_dir = GConstants.get_server_data_dir()
-	$SimpleSaver.assign_file_parts(server_data_dir,GConstants.worlds_builder_file)
+	console.write(world_app_path)
+	$SimpleSaver.assign_file(GConstants.worlds_builder_file)
 	pass
 
 func start_new_server_build(match_name):

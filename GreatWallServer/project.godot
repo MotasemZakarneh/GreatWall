@@ -58,6 +58,8 @@ _global_script_class_icons={
 
 config/name="GreatWallServer"
 run/main_scene="res://WorldServerApp.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="GWServer"
 config/icon="res://icon.png"
 
 [autoload]

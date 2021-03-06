@@ -430,6 +430,8 @@ _global_script_class_icons={
 
 config/name="GreatWall"
 run/main_scene="res://Game.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="GreatWall"
 config/icon="res://icon.png"
 
 [autoload]

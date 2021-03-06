@@ -14,6 +14,9 @@ script = ExtResource( 1 )
 [node name="MatchMakerToPlayer" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
+[node name="AuthToMatchMaker" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
 [node name="MatchMakerData" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
@@ -36,6 +39,3 @@ script = ExtResource( 5 )
 
 [node name="StaticsSaver" type="Node" parent="MatchMakerData/Savers"]
 script = ExtResource( 5 )
-
-[node name="AuthToMatchMaker" type="Node2D" parent="."]
-script = ExtResource( 7 )

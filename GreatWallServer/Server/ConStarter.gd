@@ -3,15 +3,13 @@ extends Node2D
 var max_tries = 90
 var time_between_tries = 1
 
-var server_data_dir = ""
 var matches_data = {}
 var console:Console
 
 func _ready():
 	console = ConsoleLoader.get_main(self)
-	server_data_dir = GConstants.get_server_data_dir()
-	$WorldsBuilderSaver.assign_file_parts(server_data_dir,GConstants.worlds_builder_file)
-	$MatchesSaver.assign_file_parts(server_data_dir,GConstants.matches_file_name)
+	$WorldsBuilderSaver.assign_file(GConstants.worlds_builder_file)
+	$MatchesSaver.assign_file(GConstants.matches_file_name)
 	
 	matches_data = $MatchesSaver.get_data_self()
 	

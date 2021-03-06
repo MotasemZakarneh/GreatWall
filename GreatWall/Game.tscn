@@ -35,6 +35,7 @@ script = ExtResource( 4 )
 anim_sets = [ ExtResource( 7 ) ]
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 0.749161, -4.49492 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
