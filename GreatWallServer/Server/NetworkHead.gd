@@ -1,7 +1,9 @@
 extends Node2D
 
-var world_server : WorldToPlayer
+var world_to_player : WorldToPlayer
+var con_starter : ConStarter
 
 func _ready():
-	world_server = get_node("WorldServer")
+	world_to_player = get_node("WorldToPlayer")
+	con_starter = get_node("ConStarter")
 	pass

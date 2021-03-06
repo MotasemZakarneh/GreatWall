@@ -86,6 +86,8 @@ func reset_file_to_defaults():
 
 func assign_file(full_file_path : String):
 	dir_name = full_file_path.get_base_dir()
+	if dir_name.find("user") == -1:
+		dir_name = def_dir.plus_file(dir_name)
 	file_name = full_file_path.get_file()
 	pass
 

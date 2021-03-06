@@ -147,6 +147,27 @@ static func read_file(file_to_read) -> Array:
 	var json_obj = parse_json(content)
 	return json_obj
 
+static func get_all_file_names(dir_path : String) -> Array:
+	var dir : Directory = Directory.new()
+	if not dir.dir_exists(dir_path):
+		print (str(dir_path) + " Directory, does not eixst")
+		return []
+	var _er = dir.open(dir_path)
+	if _er != OK:
+		print("can not open dir, because : " + _er)
+		return []
+	dir.list_dir_begin(true,true)
+	
+	var fn : String = dir.get_next()
+	var files : Array = []
+	
+	while fn != "":
+		files.append(fn.get_file())
+		dir.get_next()
+	
+	return files
+
+
 static func to_pretty_json(obj):
 	return JSON.print(obj,"\t")
 

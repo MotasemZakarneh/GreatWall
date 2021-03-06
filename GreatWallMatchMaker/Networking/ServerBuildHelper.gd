@@ -27,10 +27,12 @@ func start_new_server_build(match_name):
 		yield(get_tree().create_timer(1),"timeout")
 		pending_matches = $SimpleSaver.get_var("pending_matches")
 		was_build_started = not pending_matches.has(match_name)
+		console.write("Waiting For Match Build To Start")
 	pass
 
 func _create_world():
 	if is_in_editor:
+		console.write("Creating World: But Is In Editor, go launch manually")
 		return
 	var build_path = world_app_path
 	var f = File.new()

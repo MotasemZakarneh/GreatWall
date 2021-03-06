@@ -56,6 +56,7 @@ func connect_to_matchmatcher():
 
 remote func r_try_login(result,match_name,match_port):
 	console.write(str(result) + " :: Login Result")
+	NetworkHead.world_to_player.join_match(match_name,match_port)
 	emit_signal("on_token_compared",result)
 	pass
 

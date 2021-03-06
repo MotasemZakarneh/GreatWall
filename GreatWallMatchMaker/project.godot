@@ -78,7 +78,8 @@ config/name="GreatWallMatchMaker"
 run/main_scene="res://MatchMakerApp.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="GWServer"
-config/icon="res://icon.png"
+config/icon="res://MatchMaker.png"
+config/windows_native_icon="res://MatchMaker.png"
 
 [autoload]
 
