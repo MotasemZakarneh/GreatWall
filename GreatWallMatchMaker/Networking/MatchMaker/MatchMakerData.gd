@@ -1,52 +1,38 @@
 extends Node2D
 class_name MatchMakerData
 
-export var auto_update_cd = 10
-
 onready var statics_saver = $Savers/StaticsSaver
-onready var matches_saver = $Savers/MatchesSaver
-
-var curr_matches = []
-var curr_matches_ids = []
 
 var console:Console
 var data : Dictionary = {}
-var auto_update_counter = 0
+
+var pending_matches : MatchesGroup
+var matches_sent_to_worlds : MatchesGroup
 
 func _ready():
+	matches_sent_to_worlds = MatchesGroup.new()
+	pending_matches = MatchesGroup.new()
+	
 	console = ConsoleLoader.get_main(self)
-	_setup_savers()
+	statics_saver.assign_file(GConstants.statics_file_name)
 	
 	yield(get_tree(),"idle_frame")
 	
 	$ServerBuildHelper.set_up(statics_saver)
-	create_new_match()
 	pass
 
-func _process(delta):
-	auto_update_counter = auto_update_counter + delta/auto_update_cd
-	if auto_update_counter>=1:
-		update_data()
-	pass
-
-func _setup_savers():
-	statics_saver.assign_file(GConstants.statics_file_name)
-	matches_saver.assign_file(GConstants.matches_file_name)
-	pass
-
-func get_first_joinable_match()->Dictionary:
-	var first_match = find_first_joinable_match()
+func get_first_joinable_match_async() -> Dictionary:
+	var first_match = _find_first_joinable_match()
 	
 	if first_match.size() == 0:
-		first_match = yield(create_new_match(),"completed")
+		first_match = yield(create_new_match_async(),"completed")
 	else:
 		yield(get_tree(),"idle_frame")
 	
 	return first_match
 
-func find_first_joinable_match():
+func _find_first_joinable_match():
 	var first_match = {}
-	update_data()
 	
 	for k in data:
 		var d = data[k]
@@ -63,28 +49,20 @@ func find_first_joinable_match():
 			break
 	return first_match
 
-func create_new_match():
-	var m = create_new_match_data()
+func create_new_match_async():
+	var m = _create_new_match_data()
 	var match_name = m["match_name"]
-	var id = m["id"]
 	
-	curr_matches.append(match_name)
-	curr_matches_ids.append(id)
+	pending_matches.add_match(m)
 	
-	matches_saver.assign_file_parts(GConstants.matches_dir,match_name+".json")
-	matches_saver.set_data_self(m)
-	
-	#data[match_name] = m
-	#matches_saver.set_var(match_name,m)
 	yield($ServerBuildHelper.start_new_server_build(match_name),"completed")
 	return m
 
-func create_new_match_data()->Dictionary:
-	update_data()
+func _create_new_match_data()->Dictionary:
 	
-	var id = curr_matches.size()
-	var n = GConstants.match_file_prefix + str(id)
-	var port = $PortsHelper.get_first_clean_port(curr_matches,curr_matches_ids)
+	var id = data.size()
+	var n = "Match_" + str(id)
+	var port = $PortsHelper.get_first_clean_port(data)
 	
 	var new_match = {
 		"id":id,
@@ -96,32 +74,28 @@ func create_new_match_data()->Dictionary:
 		"is_accepting_players":false,
 		"joined_players":[],
 		"curr_players":[],
+		"owner":0,
 		"port":port
 	}
 	
 	return new_match
 
-func update_data():
-	var matches = Extentions.get_all_file_names(GConstants.matches_dir)
-	curr_matches = matches
-	
-	data = matches_saver.get_data_self()
-	auto_update_counter = 0
-	
-	var erasables = []
-	
-	for k in data:
-		var m = data[k]
-		var is_over = m["is_over"]
-		var match_name = k
-		if is_over:
-			console.write("Should Process/Store Match Data of " + match_name)
-			erasables.append(k)
-	
-	for e in erasables:
-		var _e = data.erase(e)
-	
-	if erasables.size()>0:
-		matches_saver.set_data_self(data)
-	
-	return data
+func is_world_being_prepared(match_name):
+	var is_pending = pending_matches.contains(match_name)
+	var is_sent = matches_sent_to_worlds.contains(match_name)
+	var not_started_yet = not is_pending and not is_sent and not data.keys().has(match_name)
+	return is_pending or is_sent or not_started_yet
+
+func process_pending_match():
+	var m = pending_matches.pop_match()
+	if m.size()>0:
+		matches_sent_to_worlds.add_match(m)
+	return m
+
+func on_match_assigned(match_name,match_data):
+	matches_sent_to_worlds.remove_match(match_name)
+	data[match_name] = match_data
+	pass
+
+func is_match_in_group(match_name:String,group:MatchesGroup):
+	return group.contains(match_name)

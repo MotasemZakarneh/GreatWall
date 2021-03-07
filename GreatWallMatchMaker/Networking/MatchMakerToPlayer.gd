@@ -76,7 +76,7 @@ remote func c_try_login(token):
 	if expected_players.has(token):
 		expected_players.erase(token)
 		result = true
-		var m = yield(NetworkHead.match_maker_data.get_first_joinable_match(),"completed")
+		var m = yield(NetworkHead.match_maker_data.get_first_joinable_match_async(),"completed")
 		match_name = m["match_name"]
 		match_port = m["port"]
 	

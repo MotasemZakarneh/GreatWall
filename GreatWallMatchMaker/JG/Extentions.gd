@@ -156,14 +156,14 @@ static func get_all_file_names(dir_path : String) -> Array:
 	if _er != OK:
 		print("can not open dir, because : " + _er)
 		return []
-	dir.list_dir_begin(true,true)
+	_er = dir.list_dir_begin(true,true)
 	
 	var fn : String = dir.get_next()
 	var files : Array = []
 	
 	while fn != "":
 		files.append(fn.get_file())
-		dir.get_next()
+		fn = dir.get_next()
 	
 	return files
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Networking/NetworkHead.gd" type="Script" id=1]
 [ext_resource path="res://Networking/MatchMakerToPlayer.gd" type="Script" id=2]
@@ -7,16 +7,19 @@
 [ext_resource path="res://JG/SimpleSaver.gd" type="Script" id=5]
 [ext_resource path="res://Networking/ServerBuildHelper.gd" type="Script" id=6]
 [ext_resource path="res://AuthToMatchMaker.gd" type="Script" id=7]
+[ext_resource path="res://Networking/MatchMakerToWorld.gd" type="Script" id=8]
 
 [node name="NetworkHead" type="Node2D"]
 script = ExtResource( 1 )
-curr_matches = [ "Match_0", "Match_53", "Match_5", "Match_7", "Match_10" ]
 
 [node name="MatchMakerToPlayer" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="AuthToMatchMaker" type="Node2D" parent="."]
 script = ExtResource( 7 )
+
+[node name="MatchMakerToWorld" type="Node2D" parent="."]
+script = ExtResource( 8 )
 
 [node name="MatchMakerData" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -28,16 +31,7 @@ script = ExtResource( 4 )
 script = ExtResource( 6 )
 is_in_editor = true
 
-[node name="SimpleSaver" type="Node" parent="MatchMakerData/ServerBuildHelper"]
-script = ExtResource( 5 )
-
 [node name="Savers" type="Node" parent="MatchMakerData"]
-
-[node name="MatchesSaver" type="Node" parent="MatchMakerData/Savers"]
-script = ExtResource( 5 )
-
-[node name="DynamicsSaver" type="Node" parent="MatchMakerData/Savers"]
-script = ExtResource( 5 )
 
 [node name="StaticsSaver" type="Node" parent="MatchMakerData/Savers"]
 script = ExtResource( 5 )

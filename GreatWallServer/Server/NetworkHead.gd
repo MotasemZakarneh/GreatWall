@@ -1,9 +1,9 @@
 extends Node2D
 
 var world_to_player : WorldToPlayer
-var con_starter : ConStarter
+var match_maker_to_world : MatchMakerToWorld
 
 func _ready():
 	world_to_player = get_node("WorldToPlayer")
-	con_starter = get_node("ConStarter")
+	match_maker_to_world = get_node("MatchMakerToWorld")
 	pass

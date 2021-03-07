@@ -49,6 +49,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Networking/MatchMakerToPlayer.gd"
 }, {
+"base": "Node2D",
+"class": "MatchMakerToWorld",
+"language": "GDScript",
+"path": "res://Networking/MatchMakerToWorld.gd"
+}, {
+"base": "Object",
+"class": "MatchesGroup",
+"language": "GDScript",
+"path": "res://Networking/MatchMaker/MatchesGroup.gd"
+}, {
 "base": "Node",
 "class": "PortsHelper",
 "language": "GDScript",
@@ -68,6 +78,8 @@ _global_script_class_icons={
 "GConstants": "",
 "MatchMakerData": "",
 "MatchMakerToPlayer": "",
+"MatchMakerToWorld": "",
+"MatchesGroup": "",
 "PortsHelper": "",
 "SimpleSaver": ""
 }
