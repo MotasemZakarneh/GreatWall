@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Networking/Lobby/MatchSlotUI.gd" type="Script" id=1]
+
+[node name="MatchSlotUI" type="HBoxContainer"]
+margin_right = 189.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="."]
+margin_right = 71.0
+margin_bottom = 14.0
+text = "Match Title"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_left = 75.0
+margin_right = 125.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="PrivLabel" type="Label" parent="."]
+margin_left = 129.0
+margin_right = 189.0
+margin_bottom = 14.0
+text = "Is Private"
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+margin_left = 193.0
+margin_right = 243.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="PlayersLabel" type="Label" parent="."]
+margin_left = 247.0
+margin_right = 276.0
+margin_bottom = 14.0
+text = "0/22"

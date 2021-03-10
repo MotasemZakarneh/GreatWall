@@ -74,3 +74,7 @@ remote func r_assign_world_to_match(match_data):
 	console.write(match_name + " was assigned successfully for " + str(world_id))
 	NetworkHead.match_maker_data.on_match_assigned(match_name,match_data)
 	pass
+
+remote func c_update_match_data(match_data):
+	NetworkHead.match_maker_data.update_match_data(match_data)
+	pass

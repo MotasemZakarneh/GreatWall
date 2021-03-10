@@ -94,7 +94,12 @@ func process_pending_match():
 
 func on_match_assigned(match_name,match_data):
 	matches_sent_to_worlds.remove_match(match_name)
-	data[match_name] = match_data
+	update_match_data(match_data)
+	pass
+
+func update_match_data(new_match_data):
+	var match_name = new_match_data["match_name"]
+	data[match_name] = new_match_data
 	pass
 
 func is_match_in_group(match_name:String,group:MatchesGroup):

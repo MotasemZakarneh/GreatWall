@@ -15,8 +15,7 @@ var console :Console
 
 var curr_match : Dictionary
 
-func get_match_data():
-	return curr_match
+
 
 func _ready():
 	console = ConsoleLoader.get_main(self)
@@ -29,6 +28,14 @@ func _process(_delta):
 	if not custom_multiplayer.has_network_peer():
 		return
 	custom_multiplayer.poll()
+	pass
+
+func get_match_data():
+	return curr_match
+
+func update_match_data(new_data):
+	curr_match = new_data
+	cs_update_match_on_mm()
 	pass
 
 func start_client():
@@ -60,7 +67,12 @@ remote func c_assign_world_to_match(m):
 	curr_match = m
 	var match_name = m["match_name"]
 	m["owner"] = network.get_unique_id()
+	m["is_build_running"] = true
 	console.write_good("Assigned World To " + match_name)
 	NetworkHead.world_to_player.begin_con()
 	rpc_id(1,"r_assign_world_to_match",m)
+	pass
+
+func cs_update_match_on_mm():
+	rpc_id(1,"c_update_match_data",curr_match)
 	pass

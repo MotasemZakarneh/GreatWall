@@ -9,26 +9,37 @@ Server/World app:
 var network : NetworkedMultiplayerENet = NetworkedMultiplayerENet.new()
 export var players_count = 0
 
-var console:Console
+var console : Console
 var started_con = false
+var find_build_timer = 0
 
 func _ready():
 	console = ConsoleLoader.get_main(self)
 	var _er = connect("tree_exiting",self,"_on_closing")
-	
-	while not started_con:
-		console.write("Trying To Find Match For This World")
-		yield(get_tree().create_timer(1),"timeout")
+	find_build_timer = 1
+	pass
+
+func _process(delta):
+	if started_con:
+		return
+	find_build_timer = find_build_timer - delta
+	if find_build_timer>0:
+		return
+	find_build_timer = 1
+	console.write("Trying To Find Match For This World")
 	pass
 
 func begin_con():
 	var m = _get_match_data()
+	
 	if m.size()==0:
 		return
+	
 	started_con = true
 	var port = m["port"]
 	var max_players = m["max_players"]
 	var match_name = m["match_name"]
+	
 	console.write("Assigned Build To " + match_name)
 	
 	_start_server(port,max_players)
@@ -73,13 +84,20 @@ func _add_player(player_id):
 	var m = _get_match_data()
 	m["curr_players"].append(player_id)
 	m["joined_players"].append(player_id)
+	_update_match_data(m)
 	pass
 
 func _remove_player(player_id):
 	var m = _get_match_data()
 	var curr_players : Array = m["curr_players"]
 	curr_players.erase(player_id)
+	m["curr_players"] = curr_players
+	_update_match_data(m)
 	pass
 
 func _get_match_data():
 	return NetworkHead.match_maker_to_world.get_match_data()
+
+func _update_match_data(new_data):
+	NetworkHead.match_maker_to_world.update_match_data(new_data)
+	pass
