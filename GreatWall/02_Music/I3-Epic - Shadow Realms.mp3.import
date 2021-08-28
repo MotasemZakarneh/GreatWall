@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/I3-Epic - Shadow Realms.mp3-e7625c549a7e4a983193a4bc73f2837d.mp3str"
+
+[deps]
+
+source_file="res://02_Music/I3-Epic - Shadow Realms.mp3"
+dest_files=[ "res://.import/I3-Epic - Shadow Realms.mp3-e7625c549a7e4a983193a4bc73f2837d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

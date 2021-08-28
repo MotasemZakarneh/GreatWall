@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://01_JG/Components/SceneFader/Fader.tscn" type="PackedScene" id=1]
+[ext_resource path="res://01_JG/LevelsManager/LevelsManager.gd" type="Script" id=2]
+
+[node name="LevelsManager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Fader" parent="." instance=ExtResource( 1 )]
+layer = 100
+def_dur = 1

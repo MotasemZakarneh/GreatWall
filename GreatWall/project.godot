@@ -12,353 +12,665 @@ _global_script_classes=[ {
 "base": "MoveSystem",
 "class": "ADRotate",
 "language": "GDScript",
-"path": "res://JG/Movement/General/ADRotate.gd"
+"path": "res://01_JG/Movement/General/ADRotate.gd"
 }, {
 "base": "JG",
 "class": "AI",
 "language": "GDScript",
-"path": "res://JG/FSM/AI.gd"
+"path": "res://01_JG/FSM/AI.gd"
+}, {
+"base": "MoveSystem",
+"class": "AIMover",
+"language": "GDScript",
+"path": "res://01_JG/Movement/AIMovement/AIMover.gd"
+}, {
+"base": "Label",
+"class": "ALabel",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/ALabel.gd"
+}, {
+"base": "Node",
+"class": "ALabelAutoDir",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/ALabelAutoDir.gd"
+}, {
+"base": "RichTextLabel",
+"class": "ARichLabel",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/ARichLabel.gd"
+}, {
+"base": "Node",
+"class": "ARichLabelAutoDir",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/ARichLabelAutoDir.gd"
+}, {
+"base": "Node",
+"class": "ARichLabelCentralizer",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/ARichLabelCentralizer.gd"
+}, {
+"base": "Reference",
+"class": "ArArabic",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/arabic.gd"
+}, {
+"base": "Reference",
+"class": "ArBidiBrackets",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/database/bidi_brackets.gd"
+}, {
+"base": "Reference",
+"class": "ArBidiMirroring",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/database/bidi_mirroring.gd"
+}, {
+"base": "Reference",
+"class": "ArDB",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/database/unicode_db.gd"
+}, {
+"base": "Reference",
+"class": "ArExplicit",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/algorithm/explicit.gd"
+}, {
+"base": "Reference",
+"class": "ArLetters",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/reshaper/letters.gd"
+}, {
+"base": "Reference",
+"class": "ArLigatures",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/reshaper/ligatures.gd"
+}, {
+"base": "Reference",
+"class": "ArParagraph",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/algorithm/paragraph.gd"
+}, {
+"base": "Reference",
+"class": "ArPrepareImplicit",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/algorithm/prepare_implicit.gd"
+}, {
+"base": "Reference",
+"class": "ArReorderResolved",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/algorithm/reorder_resolved.gd"
+}, {
+"base": "Reference",
+"class": "ArResolveImplicit",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/algorithm/resolve_implicit.gd"
+}, {
+"base": "Reference",
+"class": "ArResolveNeutral",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/algorithm/resolve_neutral.gd"
+}, {
+"base": "Reference",
+"class": "ArResolveWeak",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/algorithm/resolve_weak.gd"
+}, {
+"base": "Reference",
+"class": "ArStatics",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/statics.gd"
+}, {
+"base": "Reference",
+"class": "ArUBA",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/UBA.gd"
+}, {
+"base": "Reference",
+"class": "ArUniCodeData",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/UBA/database/unicodedata.gd"
+}, {
+"base": "Reference",
+"class": "ArWordWrap",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/wordwrap/wordwrap.gd"
+}, {
+"base": "Reference",
+"class": "ArabicReShaper",
+"language": "GDScript",
+"path": "res://01_JG/ArabicText/reshaper/arabic_reshaper.gd"
 }, {
 "base": "MoveSystem",
 "class": "AutoMove",
 "language": "GDScript",
-"path": "res://JG/Movement/General/AutoMove.gd"
+"path": "res://01_JG/Movement/General/AutoMove.gd"
 }, {
 "base": "MoveSystem",
 "class": "AutoRotate",
 "language": "GDScript",
-"path": "res://JG/Movement/General/AutoRotate.gd"
+"path": "res://01_JG/Movement/General/AutoRotate.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "BaseChara",
+"language": "GDScript",
+"path": "res://00_Game/Characters/BaseChara.gd"
+}, {
+"base": "Control",
+"class": "BaseMenu",
+"language": "GDScript",
+"path": "res://Networking/Lobby/Menus/BaseMenu.gd"
+}, {
+"base": "BaseMenu",
+"class": "BlockerMenu",
+"language": "GDScript",
+"path": "res://Networking/Lobby/BlockerMenu.gd"
 }, {
 "base": "WeaponSystem",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://JG/Weapon System/Bullet.gd"
+"path": "res://01_JG/Weapon System/Bullet.gd"
 }, {
 "base": "Resource",
 "class": "CharaAnimData",
 "language": "GDScript",
-"path": "res://JG/TopDownIso/CharaAnimData.gd"
+"path": "res://01_JG/TopDownIso/CharaAnimData.gd"
 }, {
 "base": "Object",
 "class": "Condition",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Core/Condition.gd"
+"path": "res://01_JG/Interactable System/Core/Condition.gd"
 }, {
 "base": "CanvasLayer",
 "class": "Console",
 "language": "GDScript",
-"path": "res://JG/Console/Console.gd"
+"path": "res://01_JG/Console/Console.gd"
 }, {
 "base": "Object",
 "class": "ConsoleLoader",
 "language": "GDScript",
-"path": "res://JG/Console/ConsoleLoader.gd"
+"path": "res://01_JG/Console/ConsoleLoader.gd"
 }, {
 "base": "Resource",
 "class": "ConsoleStatics",
 "language": "GDScript",
-"path": "res://JG/Console/ConsoleStatics.gd"
+"path": "res://01_JG/Console/ConsoleStatics.gd"
 }, {
 "base": "Object",
 "class": "Damager",
 "language": "GDScript",
-"path": "res://JG/Components/Component Objs/Damager.gd"
+"path": "res://01_JG/Components/Component Objs/Damager.gd"
 }, {
 "base": "HealthSystem",
 "class": "DamagerNode",
 "language": "GDScript",
-"path": "res://JG/Health System/DamagerNode.gd"
+"path": "res://01_JG/Health System/DamagerNode.gd"
+}, {
+"base": "Node",
+"class": "Dialogic",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicClass.gd"
+}, {
+"base": "Control",
+"class": "DialogicBackgroundMusic",
+"language": "GDScript",
+"path": "res://addons/dialogic/Nodes/BackgroundMusic.gd"
+}, {
+"base": "Node",
+"class": "DialogicDefinitionsUtil",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicDefinitionsUtil.gd"
+}, {
+"base": "Reference",
+"class": "DialogicResources",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicResources.gd"
+}, {
+"base": "Reference",
+"class": "DialogicUtil",
+"language": "GDScript",
+"path": "res://addons/dialogic/Other/DialogicUtil.gd"
+}, {
+"base": "JG_Audio",
+"class": "DynamicMusicPlayList",
+"language": "GDScript",
+"path": "res://01_JG/Audio/Music/Scripts/DynamicMusicPlayList.gd"
 }, {
 "base": "Node",
 "class": "Extentions",
 "language": "GDScript",
-"path": "res://JG/Bases/Extentions.gd"
+"path": "res://01_JG/Bases/Extentions.gd"
 }, {
 "base": "MoveSystem",
 "class": "FaceMouse",
 "language": "GDScript",
-"path": "res://JG/Movement/General/FaceMouse.gd"
+"path": "res://01_JG/Movement/General/FaceMouse.gd"
 }, {
 "base": "MoveSystem",
 "class": "FollowTarget",
 "language": "GDScript",
-"path": "res://JG/Movement/General/FollowTarget.gd"
-}, {
-"base": "Node",
-"class": "GConstants",
-"language": "GDScript",
-"path": "res://GConstants.gd"
+"path": "res://01_JG/Movement/General/FollowTarget.gd"
 }, {
 "base": "SaveLoadSystem",
 "class": "GameSavable",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/Core/GameSavable.gd"
+"path": "res://01_JG/SaveLoad System/Core/GameSavable.gd"
 }, {
 "base": "Node2D",
-"class": "GateWayToPlayer",
+"class": "GatewayToPlayer",
 "language": "GDScript",
-"path": "res://Networking/GateWayToPlayer.gd"
+"path": "res://Networking/Deprecated/GatewayToPlayer.gd"
 }, {
 "base": "InteractionSystem",
 "class": "GlobalCondsSource",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Core/GlobalCondsSource.gd"
+"path": "res://01_JG/Interactable System/Core/GlobalCondsSource.gd"
 }, {
 "base": "HealthSystem",
 "class": "Health",
 "language": "GDScript",
-"path": "res://JG/Health System/Health.gd"
+"path": "res://01_JG/Health System/Health.gd"
 }, {
 "base": "JG",
 "class": "HealthSystem",
 "language": "GDScript",
-"path": "res://JG/Bases/HealthSystem.gd"
+"path": "res://01_JG/Bases/HealthSystem.gd"
 }, {
 "base": "InteractionSystem",
 "class": "InstanceCondsSource",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Core/InstCondsSource.gd"
+"path": "res://01_JG/Interactable System/Core/InstCondsSource.gd"
 }, {
 "base": "InteractionSystem",
 "class": "Interactable",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Core/Interactable.gd"
+"path": "res://01_JG/Interactable System/Core/Interactable.gd"
 }, {
 "base": "InteractionSystem",
 "class": "InteractableCollection",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Core/InteractableCollection.gd"
+"path": "res://01_JG/Interactable System/Core/InteractableCollection.gd"
 }, {
 "base": "JG",
 "class": "InteractionSystem",
 "language": "GDScript",
-"path": "res://JG/Interactable System/InteractionSystem.gd"
+"path": "res://01_JG/Interactable System/InteractionSystem.gd"
 }, {
 "base": "TopDownISO",
 "class": "IsoCharaAnimator",
 "language": "GDScript",
-"path": "res://JG/TopDownIso/CharaAnimatorISO.gd"
+"path": "res://01_JG/TopDownIso/CharaAnimatorISO.gd"
 }, {
 "base": "Node2D",
 "class": "JG",
 "language": "GDScript",
-"path": "res://JG/Bases/JG.gd"
+"path": "res://01_JG/Bases/JG.gd"
+}, {
+"base": "Node",
+"class": "JG_Audio",
+"language": "GDScript",
+"path": "res://01_JG/Audio/SFX/Scripts/JG_Audio.gd"
 }, {
 "base": "MoveSystem",
 "class": "KinematicMove",
 "language": "GDScript",
-"path": "res://JG/Movement/Bases/KinematicMove.gd"
+"path": "res://01_JG/Movement/Bases/KinematicMove.gd"
+}, {
+"base": "Resource",
+"class": "LevelsData",
+"language": "GDScript",
+"path": "res://01_JG/LevelsManager/LevelsData.gd"
+}, {
+"base": "Node",
+"class": "LevelsManager",
+"language": "GDScript",
+"path": "res://01_JG/LevelsManager/LevelsManager.gd"
+}, {
+"base": "CanvasLayer",
+"class": "LobbyUI",
+"language": "GDScript",
+"path": "res://Networking/Lobby/LobbyUI.gd"
 }, {
 "base": "SimpleComponent",
 "class": "LocalizedText",
 "language": "GDScript",
-"path": "res://JG/Components/LocalizedText.gd"
+"path": "res://01_JG/Localization/LocalizedText.gd"
 }, {
-"base": "Node2D",
+"base": "Resource",
+"class": "LocalizedTextsTableObj",
+"language": "GDScript",
+"path": "res://01_JG/Localization/LocalizedTextsTableObj.gd"
+}, {
+"base": "Node",
+"class": "Localizer",
+"language": "GDScript",
+"path": "res://01_JG/Localization/Localizer.gd"
+}, {
+"base": "NetworkManager",
 "class": "MatchMakerToPlayer",
 "language": "GDScript",
 "path": "res://Networking/MatchMakerToPlayer.gd"
 }, {
+"base": "Node",
+"class": "MenusController",
+"language": "GDScript",
+"path": "res://01_JG/MenuSystem/MenusController.gd"
+}, {
+"base": "MoveSystem",
+"class": "MoveByNav",
+"language": "GDScript",
+"path": "res://01_JG/Movement/AIMovement/MoveByNav.gd"
+}, {
 "base": "MoveSystem",
 "class": "MoveInputReader",
 "language": "GDScript",
-"path": "res://JG/Movement/MoveInputReader.gd"
+"path": "res://01_JG/Movement/MoveInputReader.gd"
 }, {
 "base": "JG",
 "class": "MoveSystem",
 "language": "GDScript",
-"path": "res://JG/Bases/MoveSystem.gd"
+"path": "res://01_JG/Bases/MoveSystem.gd"
 }, {
 "base": "Object",
 "class": "Mover",
 "language": "GDScript",
-"path": "res://JG/Components/Component Objs/Mover.gd"
+"path": "res://01_JG/Components/Component Objs/Mover.gd"
+}, {
+"base": "JG_Audio",
+"class": "MusicController",
+"language": "GDScript",
+"path": "res://01_JG/Audio/Music/Scripts/MusicController.gd"
+}, {
+"base": "JG_Audio",
+"class": "MusicElement",
+"language": "GDScript",
+"path": "res://01_JG/Audio/Music/Scripts/MusicElement.gd"
+}, {
+"base": "JG_Audio",
+"class": "MusicPlayList",
+"language": "GDScript",
+"path": "res://01_JG/Audio/Music/Scripts/MusicPlayList.gd"
+}, {
+"base": "Node",
+"class": "NetworkBehavior",
+"language": "GDScript",
+"path": "res://Networking/NetworkBehavior.gd"
+}, {
+"base": "Node",
+"class": "NetworkManager",
+"language": "GDScript",
+"path": "res://Networking/NetworkManager.gd"
 }, {
 "base": "KinematicMove",
 "class": "PlatformerMove",
 "language": "GDScript",
-"path": "res://JG/Movement/General/Kinematc Only/PlatformerMove.gd"
+"path": "res://01_JG/Movement/General/Kinematc Only/PlatformerMove.gd"
+}, {
+"base": "Control",
+"class": "PlayerDisplay",
+"language": "GDScript",
+"path": "res://Networking/Lobby/Elements/PlayerDisplayTemplate.gd"
+}, {
+"base": "Sprite",
+"class": "Prop8Dir",
+"language": "GDScript",
+"path": "res://01_JG/TopDownIso/Prop8Dir.gd"
 }, {
 "base": "RigidMove",
 "class": "PushMove",
 "language": "GDScript",
-"path": "res://JG/Movement/Rigid Body/PushMove.gd"
+"path": "res://01_JG/Movement/Rigid Body/PushMove.gd"
 }, {
 "base": "Reaction",
 "class": "R_Debug",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_Debug.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_Debug.gd"
 }, {
 "base": "Reaction",
 "class": "R_Kill",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_Kill.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_Kill.gd"
 }, {
 "base": "Reaction",
 "class": "R_MoveNode",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_MoveNode.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_MoveNode.gd"
+}, {
+"base": "Reaction",
+"class": "R_PlayAnim",
+"language": "GDScript",
+"path": "res://01_JG/Interactable System/Reaction System/R_PlayAnim.gd"
+}, {
+"base": "Reaction",
+"class": "R_PlayTimeLine",
+"language": "GDScript",
+"path": "res://00_Game/InteractableSystem/Reactions/R_PlayTimeLine.gd"
 }, {
 "base": "Reaction",
 "class": "R_Print",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_Print.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_Print.gd"
 }, {
 "base": "Reaction",
 "class": "R_SetCollisions_State",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_SetCollisionsState.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_SetCollisionsState.gd"
 }, {
 "base": "Reaction",
 "class": "R_SetVisibility",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_SetVisiblity.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_SetVisiblity.gd"
 }, {
 "base": "Reaction",
 "class": "R_SpawnEnemies",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_SpawnEnemies.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_SpawnEnemies.gd"
 }, {
 "base": "Reaction",
 "class": "R_TurnOffCol",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_TurnOffCol.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_TurnOffCol.gd"
 }, {
 "base": "Reaction",
 "class": "R_UpdateCondition",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/R_UpdateCondition.gd"
+"path": "res://01_JG/Interactable System/Reaction System/R_UpdateCondition.gd"
 }, {
 "base": "ReactionSystem",
 "class": "Reaction",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/Bases/Reaction.gd"
+"path": "res://01_JG/Interactable System/Reaction System/Bases/Reaction.gd"
 }, {
 "base": "ReactionSystem",
 "class": "ReactionCollection",
 "language": "GDScript",
-"path": "res://JG/Interactable System/Reaction System/Bases/ReactionCollection.gd"
+"path": "res://01_JG/Interactable System/Reaction System/Bases/ReactionCollection.gd"
 }, {
 "base": "InteractionSystem",
 "class": "ReactionSystem",
 "language": "GDScript",
-"path": "res://JG/Bases/ReactionSystem.gd"
+"path": "res://01_JG/Bases/ReactionSystem.gd"
 }, {
 "base": "MoveSystem",
 "class": "RigidMove",
 "language": "GDScript",
-"path": "res://JG/Movement/Bases/RigidMove.gd"
+"path": "res://01_JG/Movement/Bases/RigidMove.gd"
+}, {
+"base": "SFXPlayer",
+"class": "SFXButton",
+"language": "GDScript",
+"path": "res://01_JG/Audio/SFX/Players/SFXButton.gd"
+}, {
+"base": "JG_Audio",
+"class": "SFXDynamicGroup",
+"language": "GDScript",
+"path": "res://01_JG/Audio/SFX/Scripts/SFXDynamicGroup.gd"
+}, {
+"base": "JG_Audio",
+"class": "SFXElement",
+"language": "GDScript",
+"path": "res://01_JG/Audio/SFX/Scripts/SFXElement.gd"
+}, {
+"base": "JG_Audio",
+"class": "SFXGroup",
+"language": "GDScript",
+"path": "res://01_JG/Audio/SFX/Scripts/SFXGroup.gd"
+}, {
+"base": "JG_Audio",
+"class": "SFXManager",
+"language": "GDScript",
+"path": "res://01_JG/Audio/SFX/Scripts/SFXManager.gd"
+}, {
+"base": "JG_Audio",
+"class": "SFXPlayer",
+"language": "GDScript",
+"path": "res://01_JG/Audio/SFX/Players/SFXPlayer.gd"
 }, {
 "base": "GameSavable",
 "class": "S_CollisionState",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/S_CollisionState.gd"
+"path": "res://01_JG/SaveLoad System/S_CollisionState.gd"
 }, {
 "base": "GameSavable",
 "class": "S_GlobalConds",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/S_GlobalConds.gd"
+"path": "res://01_JG/SaveLoad System/S_GlobalConds.gd"
 }, {
 "base": "GameSavable",
 "class": "S_InstConds",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/S_InstConds.gd"
+"path": "res://01_JG/SaveLoad System/S_InstConds.gd"
 }, {
 "base": "GameSavable",
 "class": "S_Level",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/S_Level.gd"
+"path": "res://01_JG/SaveLoad System/S_Level.gd"
 }, {
 "base": "GameSavable",
 "class": "S_Name",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/S_Name.gd"
+"path": "res://01_JG/SaveLoad System/S_Name.gd"
 }, {
 "base": "GameSavable",
 "class": "S_Position",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/S_Position.gd"
+"path": "res://01_JG/SaveLoad System/S_Position.gd"
 }, {
 "base": "SaveLoadSystem",
 "class": "SaveLoadJson",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/Core/SaveLoadJson.gd"
+"path": "res://01_JG/SaveLoad System/Core/SaveLoadJson.gd"
 }, {
 "base": "JG",
 "class": "SaveLoadSystem",
 "language": "GDScript",
-"path": "res://JG/SaveLoad System/SaveLoadSystem.gd"
+"path": "res://01_JG/SaveLoad System/SaveLoadSystem.gd"
 }, {
 "base": "SimpleComponent",
 "class": "SceneActivator",
 "language": "GDScript",
-"path": "res://JG/Components/SceneActivator.gd"
+"path": "res://01_JG/Components/SceneActivator.gd"
 }, {
 "base": "WeaponSystem",
 "class": "Shooter",
 "language": "GDScript",
-"path": "res://JG/Weapon System/Shooter.gd"
+"path": "res://01_JG/Weapon System/Shooter.gd"
 }, {
 "base": "JG",
 "class": "SimpleComponent",
 "language": "GDScript",
-"path": "res://JG/Components/SimpleComponent.gd"
+"path": "res://01_JG/Components/SimpleComponent.gd"
 }, {
 "base": "Node",
 "class": "SimpleSaver",
 "language": "GDScript",
-"path": "res://JG/SimpleSaver/SimpleSaver.gd"
+"path": "res://01_JG/SimpleSaver/SimpleSaver.gd"
 }, {
 "base": "SimpleSaver",
 "class": "SimpleSettings",
 "language": "GDScript",
-"path": "res://JG/SimpleSaver/SimpleSettings.gd"
+"path": "res://01_JG/SimpleSaver/SimpleSettings.gd"
 }, {
 "base": "SimpleComponent",
 "class": "SimpleTrigger",
 "language": "GDScript",
-"path": "res://JG/Components/SimpleTrigger.gd"
+"path": "res://01_JG/Components/SimpleTrigger.gd"
+}, {
+"base": "Node2D",
+"class": "StartInteractable",
+"language": "GDScript",
+"path": "res://01_JG/Interactable System/Core/StartInteractable.gd"
 }, {
 "base": "AI",
 "class": "State",
 "language": "GDScript",
-"path": "res://JG/FSM/State.gd"
+"path": "res://01_JG/FSM/State.gd"
 }, {
 "base": "AI",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://JG/FSM/StateMachine.gd"
+"path": "res://01_JG/FSM/StateMachine.gd"
 }, {
 "base": "JG",
 "class": "TopDownISO",
 "language": "GDScript",
-"path": "res://JG/TopDownIso/TopDownISO.gd"
+"path": "res://01_JG/TopDownIso/TopDownISO.gd"
 }, {
 "base": "RigidMove",
 "class": "TorqueRotate",
 "language": "GDScript",
-"path": "res://JG/Movement/Rigid Body/TorqueRotate.gd"
+"path": "res://01_JG/Movement/Rigid Body/TorqueRotate.gd"
+}, {
+"base": "Node2D",
+"class": "VisiblityByLang",
+"language": "GDScript",
+"path": "res://01_JG/Localization/VisiblityByLang.gd"
 }, {
 "base": "MoveSystem",
 "class": "WASDMove",
 "language": "GDScript",
-"path": "res://JG/Movement/General/WASDMove.gd"
+"path": "res://01_JG/Movement/General/WASDMove.gd"
 }, {
 "base": "JG",
 "class": "WeaponSystem",
 "language": "GDScript",
-"path": "res://JG/Bases/WeaponSystem.gd"
+"path": "res://01_JG/Bases/WeaponSystem.gd"
 }, {
-"base": "Node2D",
-"class": "WorldToPlayer",
+"base": "Node",
+"class": "WebRequests",
 "language": "GDScript",
-"path": "res://Networking/WorldToPlayer.gd"
+"path": "res://01_JG/WebRequests/WebRequests.gd"
 } ]
 _global_script_class_icons={
 "ADRotate": "",
 "AI": "",
+"AIMover": "",
+"ALabel": "",
+"ALabelAutoDir": "",
+"ARichLabel": "",
+"ARichLabelAutoDir": "",
+"ARichLabelCentralizer": "",
+"ArArabic": "",
+"ArBidiBrackets": "",
+"ArBidiMirroring": "",
+"ArDB": "",
+"ArExplicit": "",
+"ArLetters": "",
+"ArLigatures": "",
+"ArParagraph": "",
+"ArPrepareImplicit": "",
+"ArReorderResolved": "",
+"ArResolveImplicit": "",
+"ArResolveNeutral": "",
+"ArResolveWeak": "",
+"ArStatics": "",
+"ArUBA": "",
+"ArUniCodeData": "",
+"ArWordWrap": "",
+"ArabicReShaper": "",
 "AutoMove": "",
 "AutoRotate": "",
+"BaseChara": "",
+"BaseMenu": "",
+"BlockerMenu": "",
 "Bullet": "",
 "CharaAnimData": "",
 "Condition": "",
@@ -367,12 +679,17 @@ _global_script_class_icons={
 "ConsoleStatics": "",
 "Damager": "",
 "DamagerNode": "",
+"Dialogic": "",
+"DialogicBackgroundMusic": "",
+"DialogicDefinitionsUtil": "",
+"DialogicResources": "",
+"DialogicUtil": "",
+"DynamicMusicPlayList": "",
 "Extentions": "",
 "FaceMouse": "",
 "FollowTarget": "",
-"GConstants": "",
 "GameSavable": "",
-"GateWayToPlayer": "",
+"GatewayToPlayer": "",
 "GlobalCondsSource": "",
 "Health": "",
 "HealthSystem": "",
@@ -382,17 +699,34 @@ _global_script_class_icons={
 "InteractionSystem": "",
 "IsoCharaAnimator": "",
 "JG": "",
+"JG_Audio": "",
 "KinematicMove": "",
+"LevelsData": "",
+"LevelsManager": "",
+"LobbyUI": "",
 "LocalizedText": "",
+"LocalizedTextsTableObj": "",
+"Localizer": "",
 "MatchMakerToPlayer": "",
+"MenusController": "",
+"MoveByNav": "",
 "MoveInputReader": "",
 "MoveSystem": "",
 "Mover": "",
+"MusicController": "",
+"MusicElement": "",
+"MusicPlayList": "",
+"NetworkBehavior": "",
+"NetworkManager": "",
 "PlatformerMove": "",
+"PlayerDisplay": "",
+"Prop8Dir": "",
 "PushMove": "",
 "R_Debug": "",
 "R_Kill": "",
 "R_MoveNode": "",
+"R_PlayAnim": "",
+"R_PlayTimeLine": "",
 "R_Print": "",
 "R_SetCollisions_State": "",
 "R_SetVisibility": "",
@@ -403,6 +737,12 @@ _global_script_class_icons={
 "ReactionCollection": "",
 "ReactionSystem": "",
 "RigidMove": "",
+"SFXButton": "",
+"SFXDynamicGroup": "",
+"SFXElement": "",
+"SFXGroup": "",
+"SFXManager": "",
+"SFXPlayer": "",
 "S_CollisionState": "",
 "S_GlobalConds": "",
 "S_InstConds": "",
@@ -417,31 +757,61 @@ _global_script_class_icons={
 "SimpleSaver": "",
 "SimpleSettings": "",
 "SimpleTrigger": "",
+"StartInteractable": "",
 "State": "",
 "StateMachine": "",
 "TopDownISO": "",
 "TorqueRotate": "",
+"VisiblityByLang": "",
 "WASDMove": "",
 "WeaponSystem": "",
-"WorldToPlayer": ""
+"WebRequests": ""
 }
 
 [application]
 
 config/name="GreatWall"
-run/main_scene="res://Game.tscn"
-config/use_custom_user_dir=true
-config/custom_user_dir_name="GreatWall"
+run/main_scene="res://Player App.tscn"
 config/icon="res://ico.png"
+config/macos_native_icon="res://ico.png"
 config/windows_native_icon="res://ico.png"
 
 [autoload]
 
+PersistantScene="*res://00_Game/PersistantScene.tscn"
+DialogicSingleton="*res://addons/dialogic/Other/DialogicSingleton.gd"
 NetworkHead="*res://Networking/NetworkHead.tscn"
+
+[display]
+
+window/size/width=1600
+window/size/height=900
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
+
+[firebase]
+
+environment_variables/apiKey="AIzaSyCcQCwW5exPfFQwMSonxfjz8KAxEAXYI-Q"
+environment_variables/authDomain="great-wall-5dd28.firebaseapp.com"
+environment_variables/databaseURL="https://great-wall-5dd28-default-rtdb.firebaseio.com"
+environment_variables/projectId="great-wall-5dd28"
+environment_variables/storageBucket="great-wall-5dd28.appspot.com"
+environment_variables/messagingSenderId="990112671641"
+environment_variables/appId="1:990112671641:web:117cee23a6e6a8f6af1508"
+environment_variables/measurementId="G-E0MGD9E59P"
+environment_variables/clientId="990112671641-8bd8sjp10ca3phrtvhrenatjtqv8qqft.apps.googleusercontent.com"
+environment_variables/clientSecret="EuN5KosM0WEOgc-M9aoRQklX"
+environment_variables/domainUriPrefix=""
+
+[physics]
+
+common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
-vram_compression/import_etc=true
-vram_compression/import_etc2=false
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Networking/Lobby/PlayerDisplayTemplate.gd" type="Script" id=1]
+
+[node name="PlayerDisplayTemplate" type="Control"]
+margin_right = 200.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 20 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 200, 20 )
+bbcode_enabled = true
+bbcode_text = "[center]Super Cool Player Name[/center]"
+text = "Super Cool Player Name"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

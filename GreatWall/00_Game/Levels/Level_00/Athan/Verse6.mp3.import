@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Verse6.mp3-edc6c7fc53b03cac4b8ea60e7a6c9ff6.mp3str"
+
+[deps]
+
+source_file="res://00_Game/Levels/Level_00/Athan/Verse6.mp3"
+dest_files=[ "res://.import/Verse6.mp3-edc6c7fc53b03cac4b8ea60e7a6c9ff6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

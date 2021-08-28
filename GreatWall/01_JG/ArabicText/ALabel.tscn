@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://01_JG/ArabicText/MarkaziFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://01_JG/ArabicText/ARichLabel.gd" type="Script" id=2]
+[ext_resource path="res://01_JG/ArabicText/ALabel.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+margin_left = 120.0
+margin_top = 97.0
+margin_right = 949.0
+margin_bottom = 407.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ALabel" type="Label" parent="."]
+margin_left = 199.056
+margin_top = -45.7598
+margin_right = 670.056
+margin_bottom = 103.24
+custom_fonts/font = ExtResource( 1 )
+autowrap = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ALabel2" type="Label" parent="."]
+margin_left = 203.54
+margin_top = 165.928
+margin_right = 650.54
+margin_bottom = 238.928
+custom_fonts/font = ExtResource( 1 )
+align = 1
+autowrap = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ALabel3" type="Label" parent="."]
+margin_left = 615.0
+margin_top = 155.0
+margin_right = 986.0
+margin_bottom = 266.0
+custom_fonts/font = ExtResource( 1 )
+text = "،ﻡﻮﻴﻟﺍ ﺍﺪﺟ ﺔﻟﻮﻐﺸﻣ ﻲﻨﻨﻜﻟ ،ﻲﻜﻟ ﺍﺮﻜﺷ
+ﺮﻴﻐﻳ ﻑﻮﺳ ،ﻉﻭﺮﺸﻣ ﺔﻳﺍﺪﺑ ﻮﻫ ﻡﻮﻴﻟﺍﻭ
+ﺔﺒﻴﺠﻌﻟﺍ ﺔﻳﺮﻘﻟﺍ ﻲﻓﻼﻣﺎﻛ ﻲﺤﻟﺍ"
+align = 2
+autowrap = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text_prop = "شكرا لكي، لكنني مشغولة جدا اليوم، واليوم هو بداية مشروع، سوف يغير الحي كاملافي القرية العجيبة"
+continious = true
+
+[node name="ARichLabel" type="RichTextLabel" parent="."]
+margin_left = 83.0
+margin_top = -13.0
+margin_right = 289.0
+margin_bottom = 140.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "ﻲﻟ ﺍﺪﺟ ﺍﺪﺟ ﺪﻴﻔﻣ ﺍﺬﻫ ،ﻲﺗﺪﺟ
+ﺎﻳ ﻲﻜﻟ ﺍﺮﻜﺷ"
+scroll_active = false
+script = ExtResource( 2 )
+continious = true
+text_prop = "شكرا لكي يا جدتي، هذا مفيد جدا جدا لي"
+
+[node name="ARichLabel2" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 1 )
+script = ExtResource( 2 )
+continious = true

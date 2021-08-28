@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "AuthToMatchMaker",
-"language": "GDScript",
-"path": "res://AuthToMatchMaker.gd"
-}, {
 "base": "CanvasLayer",
 "class": "Console",
 "language": "GDScript",
@@ -39,30 +34,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://GConstants.gd"
 }, {
-"base": "Node2D",
-"class": "MatchMakerData",
+"base": "CanvasLayer",
+"class": "LobbyUI",
 "language": "GDScript",
-"path": "res://Networking/MatchMaker/MatchMakerData.gd"
+"path": "res://Networking/Lobby/LobbyUI.gd"
 }, {
-"base": "Node2D",
+"base": "NetworkManager",
 "class": "MatchMakerToPlayer",
 "language": "GDScript",
 "path": "res://Networking/MatchMakerToPlayer.gd"
 }, {
 "base": "Node2D",
-"class": "MatchMakerToWorld",
+"class": "NetworkManager",
 "language": "GDScript",
-"path": "res://Networking/MatchMakerToWorld.gd"
-}, {
-"base": "Object",
-"class": "MatchesGroup",
-"language": "GDScript",
-"path": "res://Networking/MatchMaker/MatchesGroup.gd"
-}, {
-"base": "Node",
-"class": "PortsHelper",
-"language": "GDScript",
-"path": "res://Networking/MatchMaker/PortsHelper.gd"
+"path": "res://Networking/NetworkManager.gd"
 }, {
 "base": "Node",
 "class": "SimpleSaver",
@@ -70,17 +55,14 @@ _global_script_classes=[ {
 "path": "res://JG/SimpleSaver.gd"
 } ]
 _global_script_class_icons={
-"AuthToMatchMaker": "",
 "Console": "",
 "ConsoleLoader": "",
 "ConsoleStatics": "",
 "Extentions": "",
 "GConstants": "",
-"MatchMakerData": "",
+"LobbyUI": "",
 "MatchMakerToPlayer": "",
-"MatchMakerToWorld": "",
-"MatchesGroup": "",
-"PortsHelper": "",
+"NetworkManager": "",
 "SimpleSaver": ""
 }
 

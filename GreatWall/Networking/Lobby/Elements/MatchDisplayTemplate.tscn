@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Networking/Lobby/Elements/MatchDisplayTemplate.gd" type="Script" id=1]
+
+[node name="MatchTemplate" type="HBoxContainer"]
+margin_right = 775.0
+margin_bottom = 20.0
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+match_name_label_path = NodePath("Match Name")
+players_label_path = NodePath("Players")
+privacy_label_path = NodePath("Privacy")
+map_label_path = NodePath("Map")
+
+[node name="Match Name" type="RichTextLabel" parent="."]
+margin_left = 201.0
+margin_right = 291.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 90, 20 )
+bbcode_enabled = true
+bbcode_text = "[center]Name[/center]"
+text = "Name"
+scroll_active = false
+
+[node name="Players" type="RichTextLabel" parent="."]
+margin_left = 295.0
+margin_right = 385.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 90, 20 )
+bbcode_enabled = true
+bbcode_text = "[center]Players[/center]"
+text = "Players"
+scroll_active = false
+
+[node name="Privacy" type="RichTextLabel" parent="."]
+margin_left = 389.0
+margin_right = 479.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 90, 20 )
+bbcode_enabled = true
+bbcode_text = "[center]Is Private[/center]"
+text = "Is Private"
+scroll_active = false
+
+[node name="Map" type="RichTextLabel" parent="."]
+margin_left = 483.0
+margin_right = 573.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 90, 20 )
+bbcode_enabled = true
+bbcode_text = "[center]Map[/center]"
+text = "Map"
+scroll_active = false

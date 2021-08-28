@@ -1,16 +1,10 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://JG/TopDownIso/CharaAnimData.gd" type="Script" id=1]
-[ext_resource path="res://Art/MC_3_Idle.png" type="Texture" id=2]
-[ext_resource path="res://Art/MC_4_Idle.png" type="Texture" id=3]
-[ext_resource path="res://Art/MC_3_Run.png" type="Texture" id=4]
-[ext_resource path="res://Art/MC_2_Run.png" type="Texture" id=5]
-[ext_resource path="res://Art/MC_4_Run.png" type="Texture" id=6]
-[ext_resource path="res://Art/MC_2_Idle.png" type="Texture" id=7]
+[ext_resource path="res://01_JG/TopDownIso/CharaAnimData.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
-texes = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ]
-texes_lengths = [ Vector2( 3, 8 ), Vector2( 8, 8 ), Vector2( 3, 8 ), Vector2( 8, 8 ), Vector2( 3, 8 ), Vector2( 8, 8 ) ]
+texes = [  ]
+texes_lengths = [  ]
 directions_to_get = 8
-speeds = [ 6.0, 18.0, 6.0, 12.0, 6.0, 12.0 ]
+speeds = [  ]

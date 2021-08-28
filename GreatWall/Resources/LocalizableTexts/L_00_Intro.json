@@ -1,0 +1,22 @@
+[
+	{
+		"key":"A",
+		"en":"What is wrong honey, you aren't eating?",
+		"ar":"ًماذا هناك يا حبيبتي، لا تريدين تناول الطعام؟"
+	},
+	{
+		"key":"B",
+		"en":"thanks, but I am in a hurry, today we are starting a new project",
+		"ar":"ًشكرا، لكنني على عجالة، اليوم بداية مشروع جديد سيغير الحي بشكل كامل"
+	},
+	{
+		"key":"C",
+		"en":"May god guide you and give you success, but cant you grab a bite before leaving?",
+		"ar":"ًما شاء الله، ألا تستطيعي تناول لقمة قبل أن تخرجي؟"
+	},
+	{
+		"key":"D",
+		"en":"I am also proud, joyed and thankful to you too, for pushing me to study, i'll have a bite",
+		"ar":"ًوأنا أيضا سعيدة وشاكرة لإنكي دفعتيني للدراسة، سوف أسمع لكي وأتناول قطعة"
+	}
+]

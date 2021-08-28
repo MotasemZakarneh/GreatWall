@@ -1,0 +1,166 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://00_Game/Characters/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Z_Gimp/LivingRoomSketch.png" type="Texture" id=2]
+[ext_resource path="res://01_JG/Art/GUI/UITheme.tres" type="Theme" id=3]
+[ext_resource path="res://00_Game/UI/Elements/DefButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://01_JG/Art/GUI/gui.png" type="Texture" id=5]
+[ext_resource path="res://00_Game/UI/Scripts/PauseMenu.gd" type="Script" id=6]
+[ext_resource path="res://00_Game/Environment/Chair_Blue.tscn" type="PackedScene" id=7]
+[ext_resource path="res://00_Game/UI/Scripts/GameUI.gd" type="Script" id=8]
+[ext_resource path="res://00_Game/UI/SettingsMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://01_JG/Interactable System/StartInteractable.tscn" type="PackedScene" id=10]
+[ext_resource path="res://00_Game/InteractableSystem/Reactions/R_PlayTimeLine.gd" type="Script" id=11]
+[ext_resource path="res://00_Game/Levels/SFX/Level_00_SFXes.tscn" type="PackedScene" id=12]
+[ext_resource path="res://00_Game/Characters/Mother/Mother.tscn" type="PackedScene" id=23]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -43.1752, 108.028, 103.56, 106.968, 174.015, 108.558, 398.437, 220.818, -403.001, 215.206, -109.921, 110.677, 396.192, -222.555, 163.95, -135.649, -398.511, -219.187, 100.382, -133.53, -59.0672, -156.308, -29.4022, -129.822, -97.1441, -126.85 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 3, 2, 7 ), PoolIntArray( 8, 6, 7, 9, 10 ), PoolIntArray( 11, 9, 1, 0 ), PoolIntArray( 5, 4, 8, 12 ), PoolIntArray( 10, 12, 8 ), PoolIntArray( 10, 9, 11 ) ]
+outlines = [ PoolVector2Array( -398.511, -219.187, -403.001, 215.206, 398.437, 220.818, 396.192, -222.555 ), PoolVector2Array( -97.1441, -126.85, -109.921, 110.677, -43.1752, 108.028, -29.4022, -129.822, -59.0672, -156.308 ), PoolVector2Array( 100.382, -133.53, 103.56, 106.968, 174.015, 108.558, 163.95, -135.649 ) ]
+
+[node name="Level_00" type="Node2D"]
+
+[node name="StartInteractable" parent="." instance=ExtResource( 10 )]
+
+[node name="Fader" parent="StartInteractable" index="0"]
+layer = -1
+
+[node name="R_PlayTimeLine" type="Node2D" parent="StartInteractable/Interactable/InteractableCollection" index="0"]
+script = ExtResource( 11 )
+waits_till_done = true
+reaction_delay = 1.0
+
+[node name="Target" type="Position2D" parent="."]
+position = Vector2( -264.182, 0 )
+__meta__ = {
+"_gizmo_extents_": 20.0
+}
+
+[node name="Navigation2D" type="Navigation2D" parent="." groups=[
+"AIPath",
+]]
+visible = false
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Mother" parent="YSort" instance=ExtResource( 23 )]
+position = Vector2( 242.941, -123.473 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+
+[node name="LivingRoomSketch" type="Sprite" parent="YSort"]
+position = Vector2( 0, -200 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 488 )
+
+[node name="Props" type="YSort" parent="YSort"]
+
+[node name="Chair_Blue" parent="YSort/Props" instance=ExtResource( 7 )]
+
+[node name="GameUI" type="CanvasLayer" parent="." groups=[
+"GameUI",
+]]
+pause_mode = 2
+script = ExtResource( 8 )
+
+[node name="SettingsMenu" parent="GameUI" instance=ExtResource( 9 )]
+previous_menu = "PauseMenu"
+
+[node name="PauseMenu" type="Control" parent="GameUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="NinePatchRect" parent="GameUI/PauseMenu"]
+anchor_left = 0.404
+anchor_right = 0.596
+anchor_bottom = 1.0
+margin_left = -0.400024
+margin_top = 199.5
+margin_right = 0.399963
+margin_bottom = -199.5
+texture = ExtResource( 5 )
+region_rect = Rect2( 2054, 1234, 795, 803 )
+patch_margin_top = 26
+patch_margin_bottom = 21
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="GameUI/PauseMenu/BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 46.0
+margin_top = 50.0
+margin_right = -46.0
+margin_bottom = -50.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" parent="GameUI/PauseMenu/BG/VBox" instance=ExtResource( 4 )]
+margin_top = 65.0
+margin_right = 216.0
+margin_bottom = 125.0
+text_key = "Resume"
+placeholder_text = "Resume"
+
+[node name="Restart" parent="GameUI/PauseMenu/BG/VBox" instance=ExtResource( 4 )]
+margin_top = 135.0
+margin_right = 216.0
+margin_bottom = 195.0
+text_key = "Restart"
+placeholder_text = "Restart"
+
+[node name="Settings" parent="GameUI/PauseMenu/BG/VBox" instance=ExtResource( 4 )]
+margin_top = 205.0
+margin_right = 216.0
+margin_bottom = 265.0
+text_key = "Settings"
+placeholder_text = "Settings"
+
+[node name="Quit" parent="GameUI/PauseMenu/BG/VBox" instance=ExtResource( 4 )]
+margin_top = 275.0
+margin_right = 216.0
+margin_bottom = 335.0
+text_key = "Quit"
+placeholder_text = "Quit"
+
+[node name="Level_00_SFXes" parent="." instance=ExtResource( 12 )]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -384, -128, -384, -160, -288, -216, 288, -216, 352, -176, 384, -152, 384, -88, 384, 48, 360, 48, 360, -144, 288, -192, -288, -192, -360, -144, -360, -128 )
+
+[node name="Top3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 768, 48, 384, 48, 384, 32, 768, 32 )
+
+[node name="Top2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -360, -96, -960, -96, -960, -128, -360, -128 )
+
+[node name="Bot2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -360, 192, 768, 192, 768, 232, -360, 232 )
+
+[node name="Bot3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -360, 240, -384, 240, -384, 0, -360, 0 )
+
+[node name="Bot5" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 0, 128 )
+polygon = PoolVector2Array( -360, -96, -960, -96, -960, -128, -360, -128 )
+
+[node name="DoorBlock" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 0, 128 )
+polygon = PoolVector2Array( -360, -224, -360, -128, -384, -128, -384, -224 )
+
+[editable path="StartInteractable"]

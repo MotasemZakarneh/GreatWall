@@ -1,0 +1,62 @@
+[
+	{
+		"key":"Begin",
+		"en":"Begin",
+		"ar":"إبدأ"
+	},
+	{
+		"key":"Quit",
+		"en":"Quit",
+		"ar":"خروج"
+	},
+	{
+		"key":"Continue",
+		"en":"Continue",
+		"ar":"إستمر"
+	},
+	{
+		"key":"NewGame",
+		"en":"New Experience",
+		"ar":"تجربة جديدة"
+	},
+	{
+		"key":"Settings",
+		"en":"Settings",
+		"ar":"الإعدادات"
+	},
+	{
+		"key":"Back",
+		"en":"Back",
+		"ar":"رجوع"
+	},
+	{
+		"key":"SFXVol",
+		"en":"Sound Effects",
+		"ar":"المؤثرات الصوتية"
+	},
+	{
+		"key":"MusicVol",
+		"en":"Music Volume",
+		"ar":"الموسيقى"
+	},
+	{
+		"key":"Lang",
+		"en":"Language",
+		"ar":"اللغة"
+	},
+	{
+		"key":"Save",
+		"en":"Save",
+		"ar":"حفظ"
+	},
+	{
+		"key":"Restart",
+		"en":"Restart",
+		"ar":"إعادة"
+	},
+	{
+		"key":"Resume",
+		"en":"Resume",
+		"ar":"الإستمرار"
+	}
+]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/onetwothree.mp3-e09dafeefd0e160ba05ab4a1f7928d1c.mp3str"
+
+[deps]
+
+source_file="res://01_JG/Audio/Music/Tests/onetwothree.mp3"
+dest_files=[ "res://.import/onetwothree.mp3-e09dafeefd0e160ba05ab4a1f7928d1c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://01_JG/ArabicText/MarkaziFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://01_JG/Localization/LocalizedText.gd" type="Script" id=2]
+[ext_resource path="res://01_JG/ArabicText/ALabel.gd" type="Script" id=3]
+[ext_resource path="res://00_Game/UI/Elements/DefButton.gd" type="Script" id=4]
+[ext_resource path="res://01_JG/Audio/SFX/Players/SFXButton.gd" type="Script" id=5]
+
+[node name="DefButton" type="Button"]
+margin_right = 200.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 200, 60 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text_key = "Begin"
+placeholder_text = "PlaceHolder"
+
+[node name="ALabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "PlaceHolder"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text_prop = "PlaceHolder"
+
+[node name="LocalizedText" type="Node2D" parent="."]
+script = ExtResource( 2 )
+key = "Begin"
+
+[node name="SFXButton" type="Node" parent="."]
+script = ExtResource( 5 )
+mouse_entered_group = "UIButtonHover"
+mouse_click_group = "UIButtonClick"

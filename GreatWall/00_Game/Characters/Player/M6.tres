@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_3/M_3_Idle2.png" type="Texture" id=1]
+[ext_resource path="res://01_JG/TopDownIso/CharaAnimData.gd" type="Script" id=2]
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_3/M_3_Idle4.png" type="Texture" id=3]
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_6/M_6_Run.png" type="Texture" id=4]
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_3/M_3_Idle3.png" type="Texture" id=5]
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_3/M_3_Idle5.png" type="Texture" id=6]
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_3/M_3_Idle6.png" type="Texture" id=7]
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_6/M_6_Idle1.png" type="Texture" id=8]
+[ext_resource path="res://00_Game/Characters/Player/Mayoress/M_6/M_6_Walk.png" type="Texture" id=9]
+
+[resource]
+script = ExtResource( 2 )
+texes = [ ExtResource( 8 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 9 ) ]
+texes_lengths = [ Vector2( 3, 8 ), Vector2( 3, 8 ), Vector2( 3, 8 ), Vector2( 3, 8 ), Vector2( 3, 8 ), Vector2( 3, 8 ), Vector2( 8, 8 ), Vector2( 8, 8 ) ]
+directions_to_get = 8
+speeds = [ 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 12.0, 12.0 ]

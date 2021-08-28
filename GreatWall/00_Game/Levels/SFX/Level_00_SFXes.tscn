@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://01_JG/Audio/SFX/Scripts/SFXDynamicGroup.gd" type="Script" id=1]
+[ext_resource path="res://01_JG/Audio/SFX/Scripts/SFXElement.gd" type="Script" id=2]
+[ext_resource path="res://00_Game/Levels/Level_00/Athan/Verse4.mp3" type="AudioStream" id=3]
+[ext_resource path="res://00_Game/Levels/Level_00/Athan/Verse2.mp3" type="AudioStream" id=4]
+[ext_resource path="res://00_Game/Levels/Level_00/Athan/Verse3.mp3" type="AudioStream" id=5]
+[ext_resource path="res://00_Game/Levels/Level_00/Athan/Verse1.mp3" type="AudioStream" id=6]
+[ext_resource path="res://A_SFX/Clothes/cloth_light_fast_movement_14.wav" type="AudioStream" id=7]
+[ext_resource path="res://A_SFX/Clothes/cloth_light_fast_movement_12.wav" type="AudioStream" id=8]
+[ext_resource path="res://A_SFX/Clothes/cloth_light_fast_movement_15.wav" type="AudioStream" id=9]
+[ext_resource path="res://00_Game/Levels/Level_00/Athan/Verse6.mp3" type="AudioStream" id=10]
+[ext_resource path="res://A_SFX/Clothes/ClothesSwitch.mp3" type="AudioStream" id=11]
+[ext_resource path="res://00_Game/Levels/Level_00/Athan/Verse5.mp3" type="AudioStream" id=12]
+
+[node name="Level_00_SFXes" type="Node"]
+
+[node name="Athan" type="Node" parent="."]
+
+[node name="Verse1" type="Node" parent="Athan"]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="Athan/Verse1"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 6 )
+volume = 0.8
+
+[node name="Verse2" type="Node" parent="Athan"]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="Athan/Verse2"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 4 )
+
+[node name="Verse3" type="Node" parent="Athan"]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="Athan/Verse3"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 5 )
+
+[node name="Verse4" type="Node" parent="Athan"]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="Athan/Verse4"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 3 )
+
+[node name="Verse5" type="Node" parent="Athan"]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="Athan/Verse5"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 12 )
+
+[node name="Verse6" type="Node" parent="Athan"]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="Athan/Verse6"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 10 )
+
+[node name="ClothesLong" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="ClothesLong"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 11 )
+
+[node name="Clothes" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="SFXElement" type="Node" parent="Clothes"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 8 )
+
+[node name="SFXElement2" type="Node" parent="Clothes"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 7 )
+
+[node name="SFXElement3" type="Node" parent="Clothes"]
+script = ExtResource( 2 )
+audio_clip = ExtResource( 9 )

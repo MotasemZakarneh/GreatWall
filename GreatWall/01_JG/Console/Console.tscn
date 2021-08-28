@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://01_JG/Console/Console.gd" type="Script" id=1]
+
+[node name="Console" type="CanvasLayer"]
+script = ExtResource( 1 )
+activate_on_start = false
+
+[node name="Cont" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.452
+margin_bottom = -21.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Cont"]
+margin_right = 1024.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 1024, 250 )
+
+[node name="VBox" type="VBoxContainer" parent="Cont/Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="Cont/Panel/VBox"]
+margin_right = 1024.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 1024, 225 )
+bbcode_enabled = true
+scroll_following = true
+
+[node name="LineEdit" type="LineEdit" parent="Cont/Panel/VBox"]
+margin_top = 229.0
+margin_right = 1024.0
+margin_bottom = 253.0

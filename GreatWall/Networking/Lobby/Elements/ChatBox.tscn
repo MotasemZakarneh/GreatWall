@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Networking/Lobby/Elements/ChatBox.gd" type="Script" id=1]
+
+[node name="ChatBox" type="Control"]
+margin_top = 304.0
+margin_right = 800.0
+margin_bottom = 594.0
+rect_min_size = Vector2( 800, 290 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0705882, 0.0196078, 0.0196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatArea" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.89
+margin_left = 10.0
+margin_top = 5.0
+margin_right = -14.0
+margin_bottom = -0.509979
+color = Color( 0.121569, 0.0313726, 0.0313726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatBox" type="RichTextLabel" parent="ChatArea"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 270 )
+bbcode_enabled = true
+bbcode_text = "Welcome To Lobby"
+text = "Welcome To Lobby"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchor_left = 0.013
+anchor_top = 0.903
+anchor_right = 0.987
+anchor_bottom = 0.981
+margin_left = -0.387
+margin_top = -0.0269775
+margin_right = -9.987
+margin_bottom = 1.35303
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]

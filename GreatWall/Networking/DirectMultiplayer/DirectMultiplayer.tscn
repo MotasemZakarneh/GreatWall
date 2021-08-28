@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Networking/DirectMultiplayer/DirectMultiplayer.gd" type="Script" id=1]
+
+[node name="DirectMultiplayer" type="CanvasLayer"]
+layer = 3
+script = ExtResource( 1 )
+discon_button_head_path = NodePath("Control/VBox/DisconnectButton")
+con_buttons_head_path = NodePath("Control/VBox/ConnectButtons")
+status_path = NodePath("Control/VBox/HBox3/Status")
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Control"]
+margin_right = 304.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="Control/VBox"]
+margin_right = 304.0
+margin_bottom = 52.0
+alignment = 1
+
+[node name="Labels" type="VBoxContainer" parent="Control/VBox/HBox"]
+margin_right = 100.0
+margin_bottom = 52.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBox/HBox/Labels"]
+margin_top = 4.0
+margin_right = 100.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 20 )
+text = "Address: "
+
+[node name="Label2" type="Label" parent="Control/VBox/HBox/Labels"]
+margin_top = 28.0
+margin_right = 100.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 100, 20 )
+text = "Port:       "
+
+[node name="Input" type="VBoxContainer" parent="Control/VBox/HBox"]
+margin_left = 104.0
+margin_right = 304.0
+margin_bottom = 52.0
+alignment = 1
+
+[node name="Address" type="LineEdit" parent="Control/VBox/HBox/Input"]
+margin_right = 200.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 200, 20 )
+text = "127.0.0.1"
+
+[node name="Port" type="LineEdit" parent="Control/VBox/HBox/Input"]
+margin_top = 28.0
+margin_right = 200.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 200, 20 )
+text = "8002"
+
+[node name="ConnectButtons" type="HBoxContainer" parent="Control/VBox"]
+margin_top = 56.0
+margin_right = 304.0
+margin_bottom = 76.0
+
+[node name="Host" type="Button" parent="Control/VBox/ConnectButtons"]
+margin_right = 150.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+text = "Host"
+
+[node name="Join" type="Button" parent="Control/VBox/ConnectButtons"]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 0 )
+text = "Join"
+
+[node name="HBox3" type="HBoxContainer" parent="Control/VBox"]
+margin_top = 80.0
+margin_right = 304.0
+margin_bottom = 100.0
+alignment = 1
+
+[node name="Status" type="Label" parent="Control/VBox/HBox3"]
+margin_left = 81.0
+margin_right = 223.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+text = "Status: Not Connected"
+
+[node name="DisconnectButton" type="HBoxContainer" parent="Control/VBox"]
+margin_top = 104.0
+margin_right = 304.0
+margin_bottom = 124.0
+
+[node name="Disconnect" type="Button" parent="Control/VBox/DisconnectButton"]
+margin_right = 300.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 300, 0 )
+text = "Disconnect"
+
+[connection signal="text_changed" from="Control/VBox/HBox/Input/Address" to="Control" method="_on_Address_text_changed"]
+[connection signal="text_changed" from="Control/VBox/HBox/Input/Address" to="." method="_on_Address_text_changed"]
+[connection signal="text_changed" from="Control/VBox/HBox/Input/Port" to="Control" method="_on_Port_text_changed"]
+[connection signal="button_down" from="Control/VBox/ConnectButtons/Host" to="." method="_on_Host_button_down"]
+[connection signal="button_down" from="Control/VBox/ConnectButtons/Join" to="." method="_on_Join_button_down"]
+[connection signal="button_down" from="Control/VBox/DisconnectButton/Disconnect" to="." method="_on_Disconnect_button_down"]

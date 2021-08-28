@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Networking/Lobby/Elements/PlayerDisplayTemplate.gd" type="Script" id=1]
+
+[node name="PlayerDisplayTemplate" type="HBoxContainer"]
+margin_right = 330.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 200, 20 )
+alignment = 1
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 30.0
+margin_right = 230.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 200, 20 )
+bbcode_enabled = true
+bbcode_text = "[center]Super Cool Player Name[/center]"
+text = "Super Cool Player Name"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 234.0
+margin_right = 300.0
+margin_bottom = 33.0
+text = "Is Ready"

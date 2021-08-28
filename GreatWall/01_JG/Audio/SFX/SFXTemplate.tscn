@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://01_JG/Audio/SFX/SFXTemplate.gd" type="Script" id=1]
+
+[node name="SFXTemplate" type="AudioStreamPlayer2D"]
+volume_db = 24.0
+attenuation = 0.757858
+script = ExtResource( 1 )

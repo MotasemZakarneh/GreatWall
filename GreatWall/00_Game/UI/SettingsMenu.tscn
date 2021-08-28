@@ -1,0 +1,146 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://01_JG/Art/GUI/UITheme.tres" type="Theme" id=1]
+[ext_resource path="res://00_Game/UI/Elements/DefButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://00_Game/UI/Elements/DefLabel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://01_JG/Art/GUI/gui.png" type="Texture" id=4]
+[ext_resource path="res://00_Game/UI/Scripts/SettingsMenu.gd" type="Script" id=7]
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BG" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.5
+margin_top = -250.5
+margin_right = 250.5
+margin_bottom = 250.5
+texture = ExtResource( 4 )
+region_rect = Rect2( 2860, 1541, 994, 491 )
+patch_margin_top = 26
+patch_margin_bottom = 21
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shading" type="NinePatchRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -14.0
+texture = ExtResource( 4 )
+region_rect = Rect2( 2101, 1287, 697, 703 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 26.0
+margin_right = -25.0
+margin_bottom = -21.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="BG/HBox"]
+margin_right = 430.0
+margin_bottom = 454.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DefLabel" parent="BG/HBox/VBox" instance=ExtResource( 3 )]
+margin_top = 60.0
+margin_right = 430.0
+margin_bottom = 95.0
+text = "SFXVol"
+text_prop = "SFXVol"
+
+[node name="SFXVol" type="HSlider" parent="BG/HBox/VBox"]
+modulate = Color( 1, 0, 0, 1 )
+margin_top = 105.0
+margin_right = 430.0
+margin_bottom = 129.0
+max_value = 1.0
+step = 0.05
+value = 0.5
+scrollable = false
+
+[node name="DefLabel2" parent="BG/HBox/VBox" instance=ExtResource( 3 )]
+margin_top = 139.0
+margin_right = 430.0
+margin_bottom = 174.0
+text = "MusicVol"
+text_prop = "MusicVol"
+key = "MusicVol"
+
+[node name="MusicVol" type="HSlider" parent="BG/HBox/VBox"]
+margin_top = 184.0
+margin_right = 430.0
+margin_bottom = 208.0
+max_value = 1.0
+step = 0.05
+scrollable = false
+tick_count = 1
+
+[node name="DefLabel3" parent="BG/HBox/VBox" instance=ExtResource( 3 )]
+margin_top = 218.0
+margin_right = 430.0
+margin_bottom = 253.0
+text = "Lang"
+text_prop = "Lang"
+key = "Lang"
+
+[node name="LangSelector" type="HBoxContainer" parent="BG/HBox/VBox"]
+margin_top = 263.0
+margin_right = 430.0
+margin_bottom = 323.0
+size_flags_vertical = 0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arabic" parent="BG/HBox/VBox/LangSelector" instance=ExtResource( 2 )]
+do_work = false
+placeholder_text = "العربية"
+
+[node name="English" parent="BG/HBox/VBox/LangSelector" instance=ExtResource( 2 )]
+margin_left = 230.0
+margin_right = 430.0
+do_work = false
+placeholder_text = "English"
+
+[node name="ControlButtons" type="HBoxContainer" parent="BG/HBox/VBox"]
+margin_top = 333.0
+margin_right = 430.0
+margin_bottom = 393.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Save" parent="BG/HBox/VBox/ControlButtons" instance=ExtResource( 2 )]
+text_key = "Save"
+placeholder_text = "Save"
+
+[node name="Back" parent="BG/HBox/VBox/ControlButtons" instance=ExtResource( 2 )]
+margin_left = 230.0
+margin_right = 430.0
+text_key = "Back"
+placeholder_text = "Back"

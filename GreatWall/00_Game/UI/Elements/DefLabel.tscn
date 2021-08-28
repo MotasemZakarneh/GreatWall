@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://01_JG/ArabicText/MarkaziFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://01_JG/Localization/LocalizedText.gd" type="Script" id=2]
+[ext_resource path="res://00_Game/UI/Elements/DefLabel.gd" type="Script" id=3]
+
+[node name="DefLabel" type="Label"]
+margin_top = 206.0
+margin_right = 623.0
+margin_bottom = 241.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+key = "SFXVol"
+
+[node name="LocalizedText" type="Node2D" parent="."]
+position = Vector2( 0, -206 )
+script = ExtResource( 2 )
+key = "SFXVol"

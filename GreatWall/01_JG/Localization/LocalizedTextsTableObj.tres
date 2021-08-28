@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://01_JG/Localization/LocalizedTextsTableObj.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+def_texts_file_path = "res://Resources/LocalizableTexts/DefLocalTextsFile.json"
+localizable_texts_dir = "res://Resources/LocalizableTexts/"

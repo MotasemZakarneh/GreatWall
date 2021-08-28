@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Networking/Lobby/Elements/PlayerDisplayTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Networking/Lobby/Menus/MainLobbyMenu.gd" type="Script" id=2]
+[ext_resource path="res://Networking/Lobby/Elements/ChatBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Networking/Lobby/Elements/MatchDisplayTemplate.tscn" type="PackedScene" id=4]
+
+[node name="MainLobbyMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+player_display_scene = ExtResource( 1 )
+match_display_scene = ExtResource( 4 )
+player_displays_node_path = NodePath("HBoxContainer/Displays BG/PlayerDisplayCont/VBox")
+matches_displays_node_path = NodePath("HBoxContainer/VBox/Games List BG/ColorRect/ScrollContainer/MatchesHead")
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.156863, 0.101961, 0.101961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Displays BG" type="ColorRect" parent="HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 200, 310 )
+color = Color( 0.266667, 0.168627, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerDisplayCont" type="ScrollContainer" parent="HBoxContainer/Displays BG"]
+anchor_right = 1.0
+anchor_bottom = 0.803
+margin_bottom = 0.199982
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="HBoxContainer/Displays BG/PlayerDisplayCont"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="HBoxContainer/Displays BG"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = -50.0
+margin_right = -25.0
+margin_bottom = -10.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateButton" type="Button" parent="HBoxContainer/Displays BG"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = -106.0
+margin_right = -25.0
+margin_bottom = -66.0
+text = "Create Match"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="Control" parent="HBoxContainer"]
+margin_left = 204.0
+margin_right = 1004.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 800, 0 )
+
+[node name="Games List BG" type="ColorRect" parent="HBoxContainer/VBox"]
+anchor_right = 1.0
+anchor_bottom = 0.46
+rect_min_size = Vector2( 800, 300 )
+color = Color( 0.0705882, 0.0196078, 0.0196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/VBox/Games List BG"]
+anchor_right = 1.0
+anchor_bottom = 0.89
+margin_left = 10.0
+margin_top = 5.0
+margin_right = -14.0
+margin_bottom = -0.509979
+color = Color( 0.121569, 0.0313726, 0.0313726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBox/Games List BG/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MatchesHead" type="VBoxContainer" parent="HBoxContainer/VBox/Games List BG/ColorRect/ScrollContainer"]
+margin_right = 775.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 775, 0 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MatchTemplate" parent="HBoxContainer/VBox/Games List BG/ColorRect/ScrollContainer/MatchesHead" instance=ExtResource( 4 )]
+
+[node name="ChatBox" parent="HBoxContainer/VBox" instance=ExtResource( 3 )]
+anchor_top = 0.456
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.400024
+margin_right = 0.0
+margin_bottom = -17.0
+
+[connection signal="button_down" from="HBoxContainer/Displays BG/BackButton" to="." method="_on_BackButton_button_down"]
+[connection signal="button_down" from="HBoxContainer/Displays BG/CreateButton" to="." method="_on_CreateButton_button_down"]
+[connection signal="on_text_submitted" from="HBoxContainer/VBox/ChatBox" to="." method="_on_ChatBox_on_text_submitted"]
