@@ -14,7 +14,7 @@ func _ready():
 	music_controller = get_node("MusicController")
 	lm = get_node("LevelsManager")
 	
-	var _er = connect("tree_exiting",self,"_on_destroy")
+	var _er = connect("tree_exiting",_on_destroy)
 	pass
 
 func _on_destroy():

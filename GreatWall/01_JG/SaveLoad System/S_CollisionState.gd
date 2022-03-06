@@ -1,7 +1,7 @@
 extends GameSavable
 class_name S_CollisionState
 
-export (NodePath) var node_path
+@export (NodePath) var node_path
 const activity_key = "Collision Activty"
 
 func capture_state()->Dictionary:

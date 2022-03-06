@@ -2,9 +2,9 @@ extends SimpleComponent
 class_name SceneActivator
 
 var body
-export var start_activity = true
-export var use_recursive_in_start = true
-export var include_visiblity = true
+@export var start_activity = true
+@export var use_recursive_in_start = true
+@export var include_visiblity = true
 
 func _ready():
 	body = get_parent()

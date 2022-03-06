@@ -2,12 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/I3-Modern - Anticipation Alternative.mp3-6c2680c2aa2af2ab9a73a06642821f91.mp3str"
+uid="uid://c83l27uppt4vw"
+path="res://.godot/imported/I3-Modern - Anticipation Alternative.mp3-6c2680c2aa2af2ab9a73a06642821f91.mp3str"
 
 [deps]
 
 source_file="res://02_Music/I3-Modern - Anticipation Alternative.mp3"
-dest_files=[ "res://.import/I3-Modern - Anticipation Alternative.mp3-6c2680c2aa2af2ab9a73a06642821f91.mp3str" ]
+dest_files=["res://.godot/imported/I3-Modern - Anticipation Alternative.mp3-6c2680c2aa2af2ab9a73a06642821f91.mp3str"]
 
 [params]
 

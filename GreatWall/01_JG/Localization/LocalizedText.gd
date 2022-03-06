@@ -2,9 +2,9 @@ tool
 extends SimpleComponent
 class_name LocalizedText
 
-export var do_work = true
-export(String) var file_name
-export var key = ""
+@export var do_work = true
+@export(String) var file_name
+@export var key = ""
 var alabel = null
 
 func update_data(_do_work,_file_name,_key):

@@ -1,7 +1,7 @@
 extends BaseChara
 
-export var speed = 100
-export var cam_follow_player = false
+@export var speed = 100
+@export var cam_follow_player = false
 
 var velocity = Vector2.ZERO
 var input_reader : MoveInputReader
@@ -37,7 +37,9 @@ func _update_movement():
 		velocity = input_reader.input.normalized()*speed
 		anim = move_anim_name
 	
-	var _rem_vel = move_and_slide(velocity)
+	motion_velocity = velocity
+	#var _rem_vel = move_and_slide(velocity)
+	move_and_slide()
 	play_anim(anim)
 	pass
 

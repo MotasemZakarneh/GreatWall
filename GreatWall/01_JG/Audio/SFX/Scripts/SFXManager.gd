@@ -9,7 +9,7 @@ func _ready():
 	groups = Extentions.get_children_of_type(self,[SFXGroup])
 	for g in groups:
 		g.setup()
-	yield(get_tree(),"idle_frame")
+	await get_tree().idle_frame
 	apply_new_sfx(PersistantScene.settings.sfx_vol)
 	pass
 
@@ -23,7 +23,7 @@ func play_group(group_name:String,caller:Node2D = null,element:String = ""):
 	var g : SFXGroup = _get_group_by_name(group_name)
 	
 	if g == null:
-		if not group_name.empty():
+		if group_name != "":
 			print("Can not find group " + group_name)
 		return
 	

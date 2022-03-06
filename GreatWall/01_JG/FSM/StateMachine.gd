@@ -11,7 +11,7 @@ Note: send_event_to_active_state this function is used to add interruptions to t
 if the active state, can handle the event.
 """
 
-export var auto_run = false
+@export var auto_run = false
 
 # Do not specifiy the type of the state, to avoid circular dependency
 #as the state class, looks for the type of StateMachine.

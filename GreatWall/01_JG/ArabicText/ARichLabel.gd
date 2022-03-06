@@ -10,9 +10,9 @@ const wordwrap = ArWordWrap
 const def_font_path = "res://01_JG/ArabicText/MarkaziFont.tres"
 
 # Use this for input rather than `text`
-export var continious = false
-export var auto_wrap = true
-export(String, MULTILINE) var text_prop = '' setget _set_text_prop
+@export var continious = false
+@export var auto_wrap = true
+@export(String, MULTILINE) var text_prop = '' setget _set_text_prop
 
 
 func _ready():

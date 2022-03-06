@@ -1,16 +1,16 @@
 extends InteractionSystem
 class_name Interactable
 
-"""
-Base node, that acts as interactable, must contain, InteractableCollections in order to work.
-Must Be Parented To An Area2D, or 'interact' function must be called externally
-"""
+#"""
+#Base node, that acts as interactable, must contain, InteractableCollections in order to work.
+#Must Be Parented To An Area2D, or 'interact' function must be called externally
+#"""
 
 signal on_interactable_started(i)
 signal on_interactable_finished(i)
 const interactable_group = "Interactable"
 
-export var max_plays_count = -1
+@export var max_plays_count = -1
 
 var plays_count = 0
 
@@ -37,16 +37,16 @@ func interact():
 			emit_signal("on_interactable_started",self)
 			if c.can_interact():
 				c.interact()
-				yield(c,"on_collection_finished")
+				await c.on_collection_finished
 			else:
-				yield(c,"on_collection_failed")
+				await c.on_collection_failed
 			
-			yield(get_tree(),"idle_frame")
+			await get_tree().idle_frame
 			_on_interactable_finished()
 			emit_signal("on_interactable_finished",self)
 			return
 	
-	yield(get_tree(),"idle_frame")
+	await get_tree().idle_frame
 	_on_interactable_finished()
 	emit_signal("on_interactable_finished",self)
 	pass

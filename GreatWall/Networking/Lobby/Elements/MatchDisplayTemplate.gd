@@ -1,9 +1,9 @@
 extends HBoxContainer
 
-export(NodePath) var match_name_label_path
-export(NodePath) var players_label_path
-export(NodePath) var privacy_label_path
-export(NodePath) var map_label_path
+@export var match_name_label_path:NodePath
+@export var players_label_path:NodePath
+@export var privacy_label_path:NodePath
+@export var map_label_path:NodePath
 
 var match_name_label : RichTextLabel = null
 var players_label : RichTextLabel = null

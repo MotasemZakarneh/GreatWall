@@ -1,26 +1,26 @@
 extends InteractionSystem
 class_name InteractableCollection
 
-"""
-Holds, Conditionals as fields.
-if, conditions succeed, Reactions get played
-Reactions must be childed to this node
-Reactions, are actions that happen, and effect the game, they are simple scripts that
-do one thing
-
-'inst_src_conds_path' is only used when 'use_global_source' is disabled
-'inst_src_conds_path' must point to a node that has 'InstanceCondsSource script'
-"""
+#"""
+#Holds, Conditionals as fields.
+#if, conditions succeed, Reactions get played
+#Reactions must be childed to this node
+#Reactions, are actions that happen, and effect the game, they are simple scripts that
+#do one thing
+#
+#'inst_src_conds_path' is only used when 'use_global_source' is disabled
+#'inst_src_conds_path' must point to a node that has 'InstanceCondsSource script'
+#"""
 
 signal on_collection_finished
 signal on_collection_failed
 
-export (bool) var use_global_source = true
-export (NodePath) var inst_src_conds_path = ""
-export(Extentions.decision_operator) var operation = Extentions.decision_operator.AND
+@export  var use_global_source = true
+@export var inst_src_conds_path :NodePath = ""
+@export var operation : Extentions.decision_operator = Extentions.decision_operator.AND
 
-export (Array,String) var test_keys
-export (Array,bool) var test_states
+@export var test_keys : Array[String]
+@export var test_states : Array[bool]
 
 const interactable_col_group = "Interactable Collection"
 var test_conds = []
@@ -62,7 +62,7 @@ func interact():
 	for r in reactions:
 		var re : Reaction = r
 		re.react()
-		yield(re,"on_completed")
+		await re.on_completed
 	emit_signal("on_collection_finished")
 	pass
 

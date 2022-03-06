@@ -1,9 +1,9 @@
 extends Reaction
 class_name R_SpawnEnemies
 
-export var enemies_group = "E1"
-export var min_time_between_enemies = 0.5
-export var max_time_between_enemies = 2
+@export var enemies_group = "E1"
+@export var min_time_between_enemies = 0.5
+@export var max_time_between_enemies = 2
 
 func _react():
 	var enemies = get_tree().get_nodes_in_group(enemies_group)

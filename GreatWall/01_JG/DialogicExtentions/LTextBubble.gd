@@ -11,7 +11,7 @@ extends "res://addons/dialogic/Nodes/TextBubble.gd"
 
 var file_name = ""
 var first_call = true
-export var use_standard = false
+@export var use_standard = false
 
 func _i_ready():
 	if Engine.editor_hint:

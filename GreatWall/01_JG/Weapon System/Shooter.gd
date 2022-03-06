@@ -3,13 +3,13 @@ class_name Shooter
 
 signal on_shot(bullets_pattern)
 
-export (PackedScene) var bullet : PackedScene
+@export (PackedScene) var bullet : PackedScene
 
-export var shoot_map = "ui_accept"
-export var continious_press = false
+@export var shoot_map = "ui_accept"
+@export var continious_press = false
 
-export var low_min_time_between_shots = 0.1
-export var high_min_time_between_shots = 0.2
+@export var low_min_time_between_shots = 0.1
+@export var high_min_time_between_shots = 0.2
 
 var cooling = false
 var sprite = null

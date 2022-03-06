@@ -1,9 +1,9 @@
 extends Reaction
 class_name R_PlayAnim
 
-export(NodePath) var p = ""
-export var player_group = ""
-export var anim_name = ""
+@export(NodePath) var p = ""
+@export var player_group = ""
+@export var anim_name = ""
 
 func _react():
 	if anim_name.empty():

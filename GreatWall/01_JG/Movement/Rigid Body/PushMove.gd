@@ -2,13 +2,13 @@ extends RigidMove
 class_name PushMove
 enum PushAxis {Up,Right}
 
-export (PushAxis) var push_axis = PushAxis.Up
-export var push_strength = 70
-export var slowing_strength = 70
+@export (PushAxis) var push_axis = PushAxis.Up
+@export var push_strength = 70
+@export var slowing_strength = 70
 
-export var max_speed = 500
-export var push_map = "ui_up"
-export var is_relative_vel = false
+@export var max_speed = 500
+@export var push_map = "ui_up"
+@export var is_relative_vel = false
 
 var dir = Vector2()
 var body : RigidBody2D

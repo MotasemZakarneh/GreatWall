@@ -3,8 +3,8 @@ class_name LevelsManager
 
 signal on_level_changed(last_level_name,new_level_name)
 
-export(Resource) var levels_data = null
-export(Array,String) var levels = null
+@export var levels_data : Resource = null
+@export var levels : Array[String] = null
 
 var fader = null
 
@@ -18,7 +18,7 @@ func go_to_scene(level_name : String):
 		return
 	var last_level_name = get_tree().current_scene.name
 	$Fader.def_fade_in()
-	yield($Fader,"on_faded_in")
+	await $Fader.on_faded_in
 	var level_path = ""
 	if levels_data.has_level(level_name):
 		var l = levels_data.get_level(level_name)
@@ -31,20 +31,20 @@ func go_to_scene(level_name : String):
 	
 	while true:
 		if get_tree().current_scene == null:
-			yield(get_tree(),"idle_frame")
+			await get_tree().idle_frame
 			continue
 		
 		if get_tree().current_scene.filename == level_path:
-			yield(get_tree(),"idle_frame")
+			await get_tree().idle_frame
 			break
 		
 		if get_tree().current_scene.name == level_name:
-			yield(get_tree(),"idle_frame")
+			await get_tree().idle_frame
 			break
 		
-		yield(get_tree(),"idle_frame")
+		await get_tree().idle_frame
 	
-	yield(get_tree(),"idle_frame")
+	await get_tree().idle_frame
 	emit_signal("on_level_changed",last_level_name,level_name)
 	$Fader.inst_fade_out()
 	pass
@@ -56,7 +56,7 @@ func get_level(level_name : String):
 	for l in levels:
 		if l == null:
 			continue
-		if l.empty():
+		if l == "":
 			continue
 		var f = Extentions.get_file_name_no_ext(l)
 		if f == level_name:

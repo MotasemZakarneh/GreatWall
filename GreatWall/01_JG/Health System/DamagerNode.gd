@@ -8,10 +8,10 @@ Must be parented to an Area2D
 signal on_damage_applied
 
 enum DamageMode{Enter,Exit,External}
-export (DamageMode) var damage_mode = DamageMode.Enter
-export (Array,String) var hit_groups
-export var damage = 1.0
-export var damage_type = ""
+@export (DamageMode) var damage_mode = DamageMode.Enter
+@export (Array,String) var hit_groups
+@export var damage = 1.0
+@export var damage_type = ""
 
 var body : Area2D = null
 var damager: Damager = null

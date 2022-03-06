@@ -7,14 +7,14 @@ signal on_landed
 var body : KinematicBody2D
 enum JumpStyle{Continious,OnDown,OnUp}
 
-export(JumpStyle) var jump_style = JumpStyle.Continious
-export var jump_map = "ui_up"
-export var jump_heigth = 100
-export var gravity = 981
-export var right_map = "ui_right"
-export var left_map = "ui_left"
-export var hori_speed = 200
-export var hori_accel = 100
+@export(JumpStyle) var jump_style = JumpStyle.Continious
+@export var jump_map = "ui_up"
+@export var jump_heigth = 100
+@export var gravity = 981
+@export var right_map = "ui_right"
+@export var left_map = "ui_left"
+@export var hori_speed = 200
+@export var hori_accel = 100
 
 var vel = Vector2()
 var hori_input = 0

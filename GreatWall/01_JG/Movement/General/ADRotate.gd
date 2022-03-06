@@ -1,9 +1,9 @@
 extends MoveSystem
 class_name ADRotate
 
-export var right_map = "ui_right"
-export var left_map = "ui_left"
-export var speed = 160
+@export var right_map = "ui_right"
+@export var left_map = "ui_left"
+@export var speed = 160
 
 var body = null
 var input = 0

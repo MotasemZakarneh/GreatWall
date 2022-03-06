@@ -1,8 +1,8 @@
 extends Resource
 class_name LocalizedTextsTableObj
 
-export (String,FILE,"*.json") var def_texts_file_path = ""
-export var localizable_texts_dir = "res://Resources/LocalizableTexts/"
+@export_file("*.json") var def_texts_file_path = ""
+@export var localizable_texts_dir = "res://Resources/LocalizableTexts/"
 
 var file_to_texts_table = {}
 var was_setup = false
@@ -13,7 +13,7 @@ func get_files_count ():
 
 func get_localized_text_fn(file_name:String,key:String,lang:String)->Array:
 	var file_path = def_texts_file_path
-	if not file_name.empty():
+	if file_name != "":
 		file_path = _get_file_path_from_name(file_name)
 	
 	return _get_localized_text(file_path,key,lang)
@@ -36,7 +36,7 @@ func remove_file_fn(file_name):
 
 #private functions, that deal with the appropriate path
 func _get_localized_text(file_path:String,key:String,lang:String)->Array:
-	if file_path.empty():
+	if file_path == "":
 		return [key,false]
 	
 	var norm = _get_normalized_file_path(file_path)

@@ -1,20 +1,20 @@
 extends JG_Audio
 class_name MusicController
 
-export var crossfade_time = 3
+@export var crossfade_time = 3
 
 var play_lists = []
 var active_playlist = null
 
 func _ready():
-	yield(get_tree(),"idle_frame")
+	await get_tree().idle_frame
 	apply_new_music(PersistantScene.settings.music_vol)
 	
 	play_lists = Extentions.get_children_of_type(self,[MusicPlayList])
 	for p in play_lists:
 		p.setup()
 	
-	yield(get_tree(),"idle_frame")
+	await get_tree().idle_frame
 	_try_play_last_autoplay()
 	pass
 
@@ -33,7 +33,7 @@ func play(playlist:String,element_name:String=""):
 	var l = _get_play_list_by_name(playlist)
 	
 	if l == null:
-		if playlist.empty():
+		if playlist == "":
 			return
 		print ("Couldnt find playlist " + str(playlist))
 		return

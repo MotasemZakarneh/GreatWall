@@ -1,7 +1,7 @@
 extends Resource
 class_name LevelsData
 
-export(Array,PackedScene) var levels = []
+@export var levels : Array[PackedScene]= []
 
 func get_level(level_name:String):
 	for l in levels:

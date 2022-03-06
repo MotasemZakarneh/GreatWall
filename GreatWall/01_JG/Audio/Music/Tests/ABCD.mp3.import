@@ -2,12 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/ABCD.mp3-827b0e4050138bf8cd7737f6de7f67ab.mp3str"
+uid="uid://u3abrd43hw7"
+path="res://.godot/imported/ABCD.mp3-827b0e4050138bf8cd7737f6de7f67ab.mp3str"
 
 [deps]
 
 source_file="res://01_JG/Audio/Music/Tests/ABCD.mp3"
-dest_files=[ "res://.import/ABCD.mp3-827b0e4050138bf8cd7737f6de7f67ab.mp3str" ]
+dest_files=["res://.godot/imported/ABCD.mp3-827b0e4050138bf8cd7737f6de7f67ab.mp3str"]
 
 [params]
 

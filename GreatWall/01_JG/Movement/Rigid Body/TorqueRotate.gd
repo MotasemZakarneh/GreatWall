@@ -1,11 +1,11 @@
 extends RigidMove
 class_name TorqueRotate
 
-export var max_turn_speed = 1000
-export var turn_strength = 20
-export var slowing_strength = 20
-export var turn_right_map = "ui_right"
-export var turn_left_map = "ui_left"
+@export var max_turn_speed = 1000
+@export var turn_strength = 20
+@export var slowing_strength = 20
+@export var turn_right_map = "ui_right"
+@export var turn_left_map = "ui_left"
 
 var dir = 0
 var body : RigidBody2D

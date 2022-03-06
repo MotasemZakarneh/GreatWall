@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=11 format=3]
 
-[ext_resource path="res://00_Game/Characters/NPCRoot/NPCRoot.gd" type="Script" id=1]
-[ext_resource path="res://01_JG/Movement/AIMovement/MoveByNav.gd" type="Script" id=2]
-[ext_resource path="res://01_JG/TopDownIso/CharaAnimatorISO.gd" type="Script" id=3]
-[ext_resource path="res://00_Game/Characters/NPCRoot/NPCRoot.tres" type="Resource" id=4]
-[ext_resource path="res://01_JG/Movement/AIMovement/AIMover.gd" type="Script" id=5]
-[ext_resource path="res://Art/MC_3_Idle.png" type="Texture" id=6]
+[ext_resource type="Script" path="res://00_Game/Characters/NPCRoot/NPCRoot.gd" id="1"]
+[ext_resource type="Script" path="res://01_JG/Movement/AIMovement/MoveByNav.gd" id="2"]
+[ext_resource type="Script" path="res://01_JG/TopDownIso/IsoCharaAnimator.gd" id="3"]
+[ext_resource type="Resource" path="res://00_Game/Characters/NPCRoot/NPCRoot.tres" id="4"]
+[ext_resource type="Script" path="res://01_JG/Movement/AIMovement/AIMover.gd" id="5"]
+[ext_resource type="Texture" uid="uid://d2eumwoe86xw" path="res://Art/MC_3_Idle.png" id="6"]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )

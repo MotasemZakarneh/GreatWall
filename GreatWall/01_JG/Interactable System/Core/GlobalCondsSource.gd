@@ -7,7 +7,7 @@ if there are Interactables, that use GlobalConditions.
 then, the scene of this node, must be added.
 """
 
-export (String,FILE,"*.json") var global_conds_path
+@export (String,FILE,"*.json") var global_conds_path
 var global_conds = {}
 const global_conds_group = "Global Conditions"
 

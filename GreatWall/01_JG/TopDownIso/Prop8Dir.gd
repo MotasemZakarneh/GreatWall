@@ -4,7 +4,7 @@ class_name Prop8Dir
 
 enum Dir{D,T,L,R,RT,LT,RD,LD,UnAssigned}
 
-export(Dir) var dir = Dir.D setget set_dir
+@export(Dir) var dir = Dir.D setget set_dir
 var last_dir = Dir.UnAssigned
 
 func _ready():

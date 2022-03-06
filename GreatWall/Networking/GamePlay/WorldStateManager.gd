@@ -17,7 +17,7 @@ func remove_entity(entity:Node):
 	pass
 
 #Server Code
-export var server_update_rate = 20
+@export var server_update_rate = 20
 var server_world_state = {}
 var update_counter = 0
 

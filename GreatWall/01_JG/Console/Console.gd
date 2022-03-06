@@ -1,9 +1,9 @@
 extends CanvasLayer
 class_name Console
 
-export var activate_on_start = true
-export var group_name = "Console"
-export var auto_popup_on_write = true
+@export var activate_on_start = true
+@export var group_name = "Console"
+@export var auto_popup_on_write = true
 
 signal on_entered_command(command)
 signal on_was_set_up
@@ -26,13 +26,13 @@ func set_up():
 	line = $Cont/Panel/VBox/LineEdit
 	label = $Cont/Panel/VBox/Label
 	panel = $Cont/Panel
-	var _er = line.connect("text_entered",self,"_on_send_command")
+	var _er = line.connect("text_entered",_on_send_command)
 	add_to_group(group_name)
 	write("Console Initialized")
 	panel.visible = activate_on_start
 	if activate_on_start:
 		line.grab_focus()
-	_er = connect("on_entered_command",self,"_on_command_entered")
+	_er = connect("on_entered_command",_on_command_entered)
 	emit_signal("on_was_set_up")
 	pass
 
@@ -52,7 +52,7 @@ func _on_send_command(command:String):
 
 func write(new_text):
 	if not was_set_up:
-		yield(self,"on_was_set_up")
+		await on_was_set_up
 	var txt = "null"
 	if new_text != null:
 		txt = str(new_text)
@@ -65,7 +65,7 @@ func write(new_text):
 
 func write_close(new_text):
 	if not was_set_up:
-		yield(self,"on_was_set_up")
+		await on_was_set_up
 	
 	var txt = "null"
 	if new_text != null:
@@ -85,19 +85,19 @@ func write_close(new_text):
 	pass
 
 func write_er(new_text):
-	write_col(new_text,Color.red)
+	write_col(new_text,Color.RED)
 	pass
 
 func write_warn(new_text):
-	write_col(new_text,Color.yellow)
+	write_col(new_text,Color.YELLOW)
 	pass
 
 func write_good(new_text):
-	write_col(new_text,Color.green)
+	write_col(new_text,Color.GREEN)
 	pass
 
 func write_cmd(new_text):
-	write_col(new_text,Color.aqua)
+	write_col(new_text,Color.AQUA)
 	pass
 
 func write_col(new_text,col:Color):
@@ -116,7 +116,7 @@ func request_switch():
 	if get_tree() == null:
 		return
 	
-	yield (get_tree(),"idle_frame")
+	await get_tree().idle_frame
 	if $Cont/Panel.visible:
 		line.grab_focus()
 	line.text = ""
@@ -133,3 +133,27 @@ func _on_command_entered(command:String):
 		write_cmd("Command Entered :: cls")
 		pass
 	pass
+
+
+const main_console = preload("res://01_JG/Console/MainConsole.tscn")
+const main_console_group = "MainConsole"
+
+static func get_main(caller : Node):
+	return get_console(caller,main_console,main_console_group)
+
+static func get_console(caller : Node,scene:PackedScene,group : String):
+	if group == "":
+		return null
+	
+	var consoles = caller.get_tree().get_nodes_in_group(group)
+	var console_node : Node = null
+	if consoles.size()==0:
+		if scene == null:
+			return null
+		console_node = scene.instance()
+		if not console_node.is_in_group(group):
+			console_node.add_to_group(group)
+		caller.get_tree().root.call_deferred("add_child",console_node)
+	else:
+		console_node = consoles[0]
+	return console_node

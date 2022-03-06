@@ -1,9 +1,9 @@
 extends Node2D
 class_name VisiblityByLang
 
-export var visible_on_ar = false
-export var visible_on_en = true
-export var apply_on_parent = true
+@export var visible_on_ar = false
+@export var visible_on_en = true
+@export var apply_on_parent = true
 var body = null
 
 func _ready():

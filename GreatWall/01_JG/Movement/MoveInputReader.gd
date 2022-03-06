@@ -1,13 +1,13 @@
 extends MoveSystem
 class_name MoveInputReader
 
-export var up_map = "ui_up"
-export var down_map = "ui_down"
-export var right_map = "ui_right"
-export var left_map = "ui_left"
+@export var up_map = "ui_up"
+@export var down_map = "ui_down"
+@export var right_map = "ui_right"
+@export var left_map = "ui_left"
 
-export var saftey_input_threshold = 0.065
-export var min_input_length = 0.1
+@export var saftey_input_threshold = 0.065
+@export var min_input_length = 0.1
 
 var input = Vector2()
 var last_non_zero_input = Vector2()

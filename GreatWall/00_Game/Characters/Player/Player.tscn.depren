@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://00_Game/Characters/Player/Player.gd" id="1"]
+[ext_resource type="Script" path="res://01_JG/TopDownIso/IsoCharaAnimator.gd" id="2"]
+[ext_resource type="Resource" path="res://00_Game/Characters/Player/MC.tres" id="3"]
+[ext_resource type="Script" path="res://01_JG/Movement/MoveInputReader.gd" id="4"]
+[ext_resource type="Texture" uid="uid://lf7kdrglc7po" path="res://Art/MC_2_Idle.png" id="5"]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
+script = ExtResource( 1 )
+chara_name = "M"
+anim_sets = [ ExtResource( 3 ) ]
+active_set = "C"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -45 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="IsoCharaAnimator" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="MoveInputReader" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 17.3842, 0.216408, 13.9193, 5.74141, -0.0336647, 8.92532, -13.3311, 5.9287, -17.7324, -0.158169, -12.7693, -5.49589, 0.0599785, -8.21157, 12.421, -5.58953 )

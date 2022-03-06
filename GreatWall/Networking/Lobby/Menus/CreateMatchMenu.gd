@@ -3,7 +3,7 @@ extends BaseMenu
 signal on_create_pressed(match_name,match_pw)
 signal on_cancel_pressed
 
-export var match_size = 2
+@export var match_size = 2
 
 var match_name = ""
 var match_pw = ""

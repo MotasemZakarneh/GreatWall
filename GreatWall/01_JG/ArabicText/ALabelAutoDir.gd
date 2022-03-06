@@ -2,7 +2,7 @@ extends Node
 class_name ALabelAutoDir
 tool
 
-export var do_work = true
+@export var do_work = true
 
 var p : ALabel = null
 

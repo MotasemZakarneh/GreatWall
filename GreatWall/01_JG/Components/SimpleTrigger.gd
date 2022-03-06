@@ -13,10 +13,10 @@ signal on_area_exit(area)
 signal on_body_enter(body)
 signal on_body_exit(body)
 
-export var max_interactions = -1
-export var time_between_interactions = 0.5
-export var connect_body = true
-export (Array,String) var interaction_groups = ["Player"]
+@export var max_interactions = -1
+@export var time_between_interactions = 0.5
+@export var connect_body = true
+@export (Array,String) var interaction_groups = ["Player"]
 
 var enters_count = 0
 var exits_count = 0

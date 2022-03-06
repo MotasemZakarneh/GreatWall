@@ -2,10 +2,10 @@ extends JG_Audio
 class_name MusicPlayList
 
 enum DefPlayMode{Chronogical,ContinueAtLast,RndTrack}
-export (DefPlayMode) var def_play_mode = DefPlayMode.Chronogical
-export var loop = true
-export var is_playing = false
-export var auto_play = false
+@export var def_play_mode : DefPlayMode = DefPlayMode.Chronogical
+@export var loop = true
+@export var is_playing = false
+@export var auto_play = false
 
 var elements = []
 var active_element = null
@@ -141,7 +141,6 @@ func _on_started_cross_fade(element):
 		if _is_continue_at_last_element():
 			last_element_name = ""
 		return
-	 
 	play(elements[new_index].name)
 	pass
 

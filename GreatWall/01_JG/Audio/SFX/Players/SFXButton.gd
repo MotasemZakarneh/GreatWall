@@ -1,9 +1,9 @@
 extends SFXPlayer
 class_name SFXButton
 
-export var mouse_entered_group = ""
-export var mouse_exitted_group = ""
-export var mouse_click_group = ""
+@export var mouse_entered_group = ""
+@export var mouse_exitted_group = ""
+@export var mouse_click_group = ""
 
 func _ready():
 	var _er = get_parent().connect("mouse_entered",self,"_on_mouse_entered")

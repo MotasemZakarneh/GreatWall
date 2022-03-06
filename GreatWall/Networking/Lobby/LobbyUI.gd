@@ -3,7 +3,7 @@ class_name LobbyUI
 
 signal on_leave_lobby
 
-export var auto_hide = true
+@export var auto_hide = true
 var active_match_id = -1
 
 func _ready():

@@ -2,9 +2,9 @@ extends MoveSystem
 class_name AutoMove
 
 enum DirType{Right,Left,Up,Down}
-export var speed = 700
-export(DirType) var dir = DirType.Right
-export var rotated = true
+@export var speed = 700
+@export(DirType) var dir = DirType.Right
+@export var rotated = true
 
 var body
 var v_dir

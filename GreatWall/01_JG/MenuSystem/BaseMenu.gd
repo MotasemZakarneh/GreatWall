@@ -1,6 +1,6 @@
 extends Control
 class_name BaseMenu
-export var start_hidden = true
+@export var start_hidden = true
 
 func _ready():
 	_i_ready()

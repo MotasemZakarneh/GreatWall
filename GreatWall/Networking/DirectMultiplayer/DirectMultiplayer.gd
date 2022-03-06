@@ -1,10 +1,10 @@
 extends CanvasLayer
 
-export(NodePath) var network_manager_path = ""
+@export(NodePath) var network_manager_path = ""
 
-export(NodePath) var discon_button_head_path = ""
-export(NodePath) var con_buttons_head_path = ""
-export(NodePath) var status_path = ""
+@export(NodePath) var discon_button_head_path = ""
+@export(NodePath) var con_buttons_head_path = ""
+@export(NodePath) var status_path = ""
 
 var network_manager : NetworkManager = null
 var status : Label = null

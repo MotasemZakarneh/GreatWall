@@ -2,12 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Verse2.mp3-2b2580c9d11d5ca2ef3b2f7f8112ea9f.mp3str"
+uid="uid://c24e4oc0arn2p"
+path="res://.godot/imported/Verse2.mp3-2b2580c9d11d5ca2ef3b2f7f8112ea9f.mp3str"
 
 [deps]
 
 source_file="res://00_Game/Levels/Level_00/Athan/Verse2.mp3"
-dest_files=[ "res://.import/Verse2.mp3-2b2580c9d11d5ca2ef3b2f7f8112ea9f.mp3str" ]
+dest_files=["res://.godot/imported/Verse2.mp3-2b2580c9d11d5ca2ef3b2f7f8112ea9f.mp3str"]
 
 [params]
 

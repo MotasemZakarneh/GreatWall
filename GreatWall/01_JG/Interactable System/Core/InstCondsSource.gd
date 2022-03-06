@@ -7,8 +7,8 @@ Instance based conds source, doesn't have to be stored inside of a json file
 
 const inst_conds_group = "Instance Conditions"
 var inst_conds = {}
-export (Array,String) var src_keys
-export (Array,bool) var src_states
+@export (Array,String) var src_keys
+@export (Array,bool) var src_states
 
 """
 Conditions Source, based on instance

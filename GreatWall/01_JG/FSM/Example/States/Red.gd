@@ -1,6 +1,6 @@
 extends State
 
-export var color_val = Color.red
+@export var color_val = Color.red
 
 #override these to get behavior inside of your state
 

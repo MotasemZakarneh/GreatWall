@@ -4,11 +4,11 @@ class_name MusicElement
 signal on_stopped(element)
 signal has_reached_cross_fade(element)
 
-export var fade_time = 2
-export (AudioStream) var music
-export var bus = "Music"
-export var volume = 1
-export var loop = false
+@export var fade_time = 2
+@export var music : AudioStream = null
+@export var bus = "Music"
+@export var volume = 1
+@export var loop = false
 
 const music_template = preload("res://01_JG/Audio/Music/MusicTemplate.tscn")
 
@@ -43,11 +43,11 @@ func setup():
 	var db_vol = Extentions.percent2db(0)
 	music_player.volume_db = db_vol
 	
-	tween = Tween.new()
-	tween.name = "Tween"
-	add_child(tween)
-	
-	var _er = tween.connect("tween_completed",self,"_on_tween_completed")
+	tween = create_tween()
+	tween.stop()
+	#tween.name = "Tween"
+	#add_child(tween)
+	tween.connect("tween_completed",_on_tween_completed)
 	pass
 
 func play():
@@ -93,7 +93,7 @@ func _on_tween_completed(_obj,_key):
 func _clean_tween():
 	if is_stopping:
 		is_stopping = false
-		var _er = tween.stop(music_player)
+		tween.stop()
 	if is_starting:
 		is_starting = false
 	pass

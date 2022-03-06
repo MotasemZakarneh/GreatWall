@@ -7,10 +7,10 @@ as damager, go to MovementSystems to Apply Movement, must be parented to an area
 """
 
 signal on_contact
-export var hit_bodies = true
-export (Array,String) var hit_groups = [  ]
-export var damage = 1
-export var damage_type = ""
+@export var hit_bodies = true
+@export (Array,String) var hit_groups = [  ]
+@export var damage = 1
+@export var damage_type = ""
 
 var body : Area2D
 var notifier : VisibilityNotifier2D

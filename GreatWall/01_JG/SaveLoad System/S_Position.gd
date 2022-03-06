@@ -1,7 +1,7 @@
 extends GameSavable
 class_name S_Position
 
-export (NodePath) var node_to_save
+@export (NodePath) var node_to_save
 
 func capture_state()->Dictionary:
 	var node = get_node(node_to_save)

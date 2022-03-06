@@ -2,7 +2,7 @@ tool
 extends Node
 class_name ARichLabelCentralizer
 
-export var do_work = true
+@export var do_work = true
 
 func _ready():
 	if not is_in_group("TextModifier"):

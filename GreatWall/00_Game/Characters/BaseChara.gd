@@ -1,12 +1,12 @@
-extends KinematicBody2D
+extends CharacterBody2D
 class_name BaseChara
 
-export var chara_name = "MC"
-export (Array,Resource) var anim_sets =[]
-export var active_set = "3"
-export var rnd_idles_count = 1
-export var idle_anim_name = "Idle"
-export var move_anim_name = "Walk"
+@export var chara_name = "MC"
+@export var anim_sets : Array[Resource] =[]
+@export var active_set = "3"
+@export var rnd_idles_count = 1
+@export var idle_anim_name = "Idle"
+@export var move_anim_name = "Walk"
 
 var animator : IsoCharaAnimator = null
 var curr_idle_index = 1

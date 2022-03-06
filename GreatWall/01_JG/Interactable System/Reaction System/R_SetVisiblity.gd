@@ -1,9 +1,9 @@
 extends Reaction
 class_name R_SetVisibility
 
-export var state = true
-export (NodePath) var node
-export var nodes_group = ""
+@export var state = true
+@export (NodePath) var node
+@export var nodes_group = ""
 
 #To Be Overridden
 func _react():

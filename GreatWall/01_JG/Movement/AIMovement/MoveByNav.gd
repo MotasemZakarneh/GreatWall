@@ -10,8 +10,8 @@ When this is Called the object will move by Navigation
 signal on_move_started
 signal on_stopped
 
-export var nav_group = "AIPath"
-export var saftey_dir_threshold = 0.065
+@export var nav_group = "AIPath"
+@export var saftey_dir_threshold = 0.065
 
 var is_moving : bool = false
 var target_point : Node2D = null

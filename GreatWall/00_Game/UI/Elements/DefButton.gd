@@ -1,12 +1,12 @@
 extends Button
 tool
 
-export var do_work = true
-export var text_key = ""
-export var text_file_name = ""
+@export var do_work = true
+@export var text_key = ""
+@export var text_file_name = ""
 
-export var placeholder_text = ""
-export var disable_on_html = false
+@export var placeholder_text = ""
+@export var disable_on_html = false
 
 var alabel = null
 var localized_text = null

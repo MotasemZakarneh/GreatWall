@@ -29,8 +29,8 @@ func _level_data_distribution(data):
 	is_loading = true
 	
 	while(is_loading):
-		yield(get_tree(),"idle_frame")
-	yield(get_tree(),"idle_frame")
+		await get_tree().idle_frame
+	await get_tree().idle_frame
 	
 	distribute_data(data)
 	pass

@@ -1,13 +1,13 @@
 extends JG_Audio
 class_name SFXElement
 
-export var weigth = 3 
-export (Resource) var audio_clip = null
-export var rnd_pitch = Vector2(-0.1,0.1)
-export var max_dist = 2000
-export var attenuation = 1.5
-export var bus = "SFX"
-export var volume = 1.0
+@export var weigth = 3 
+@export var audio_clip : Resource = null
+@export var rnd_pitch = Vector2(-0.1,0.1)
+@export var max_dist = 2000
+@export var attenuation = 1.5
+@export var bus = "SFX"
+@export var volume = 1.0
 
 const sfx_template = preload("res://01_JG/Audio/SFX/SFXTemplate.tscn")
 const sfx_template_no_dist = preload("res://01_JG/Audio/SFX/SFXTemplateNoDist.tscn")
@@ -54,7 +54,7 @@ func has_free_player():
 	return false
 
 func _get_rnd_pitch():
-	return rand_range(rnd_pitch.x,rnd_pitch.y)
+	return randf_range(rnd_pitch.x,rnd_pitch.y)
 
 func get_free_player():
 	for v in voices:

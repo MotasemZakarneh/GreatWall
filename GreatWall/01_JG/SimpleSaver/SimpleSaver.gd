@@ -1,17 +1,15 @@
 extends Node
 class_name SimpleSaver
 
-"""
-Use s_set_var/s_get_var 
-to save and get data from the default file, to use a different file
-add this node to the node tree and use set_var/get_var
-"""
+#Use s_set_var/s_get_var 
+#to save and get data from the default file, to use a different file
+#add this node to the node tree and use set_var/get_var
 
 const def_file_name = "SimpleData.dat"
 const def_dir = "user://"
 
-export var file_name = def_file_name
-export var dir_name = def_dir
+@export var file_name = def_file_name
+@export var dir_name = def_dir
 
 signal on_data_group_loaded(data_group)
 
@@ -155,8 +153,9 @@ static func get_data(inst):
 	if(json_string.length() == 0 or json_string.length() <= 2):
 		#print("There is no stored data In File")
 		return data
-	
-	data = parse_json(json_string)
+	var json = JSON.new()
+	json.parse(json_string)
+	data = json.get_data()
 	return data
 
 static func get_file_path(inst):

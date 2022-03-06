@@ -16,7 +16,7 @@ const ar_letters = [
 ]
 
 func _ready():
-	yield (get_tree(),"idle_frame")
+	await get_tree().idle_frame
 	apply_lang(PersistantScene.settings.curr_lang)
 	pass
 

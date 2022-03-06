@@ -1,7 +1,7 @@
 extends AudioStreamPlayer2D
 
-export var play_once = true
-export var stop_threshold = 0.07
+@export var play_once = true
+@export var stop_threshold = 0.07
 
 func _process(_delta):
 	if playing and stream != null and stream.get("loop"):

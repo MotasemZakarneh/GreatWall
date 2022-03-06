@@ -1,10 +1,10 @@
 extends Reaction
 class_name R_SetCollisions_State
 
-export var state = false
-export (NodePath) var node_path
-export (Array,NodePath) var nodes_paths
-export var nodes_group = ""
+@export var state = false
+@export (NodePath) var node_path
+@export (Array,NodePath) var nodes_paths
+@export var nodes_group = ""
 
 var collision_nodes = []
 

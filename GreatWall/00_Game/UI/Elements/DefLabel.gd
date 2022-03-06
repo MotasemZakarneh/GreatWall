@@ -1,9 +1,9 @@
 tool
 extends ALabel
 
-export var key = ""
-export var file_name = ""
-export var do_work = true
+@export var key = ""
+@export var file_name = ""
+@export var do_work = true
 
 var localized_text : LocalizedText = null
 

@@ -1,7 +1,7 @@
 extends Node
 class_name MenusController
 
-export var start_menu = ""
+@export var start_menu = ""
 var active_menu = null
 var menus = []
 

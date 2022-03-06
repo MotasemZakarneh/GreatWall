@@ -2,12 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Evil is Near.mp3-5a9a1521f298d7be666e51c0825ef70f.mp3str"
+uid="uid://benyh3t41vwky"
+path="res://.godot/imported/Evil is Near.mp3-5a9a1521f298d7be666e51c0825ef70f.mp3str"
 
 [deps]
 
 source_file="res://02_Music/Evil is Near.mp3"
-dest_files=[ "res://.import/Evil is Near.mp3-5a9a1521f298d7be666e51c0825ef70f.mp3str" ]
+dest_files=["res://.godot/imported/Evil is Near.mp3-5a9a1521f298d7be666e51c0825ef70f.mp3str"]
 
 [params]
 

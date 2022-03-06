@@ -1,6 +1,6 @@
 extends BaseMenu
 
-export var previous_menu = "PlayMenu"
+@export var previous_menu = "PlayMenu"
 
 var sfx_slider = null
 var music_slider = null

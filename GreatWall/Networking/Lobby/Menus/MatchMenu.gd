@@ -3,9 +3,9 @@ extends BaseMenu
 signal on_back_pressed
 signal on_tried_to_start_game
 
-export(NodePath) var back_button = null
-export(NodePath) var displays_head_path = null
-export(PackedScene) var display_template = null
+@export var back_button : NodePath = null
+@export var displays_head_path : NodePath = null
+@export var display_template : PackedScene = null
 
 var displays_head = null
 

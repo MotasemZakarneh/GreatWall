@@ -2,19 +2,19 @@ extends MoveSystem
 class_name WASDMove
 
 enum MoveMode { WS,AD,WASD }
-export (MoveMode) var move_mode = MoveMode.WS
+@export (MoveMode) var move_mode = MoveMode.WS
 
-export var up_map = "ui_up"
-export var down_map = "ui_down"
-export var right_map = "ui_right"
-export var left_map = "ui_left"
+@export var up_map = "ui_up"
+@export var down_map = "ui_down"
+@export var right_map = "ui_right"
+@export var left_map = "ui_left"
 
-export var speed = 300
-export var accel = 800
-export var face_move_dir = true
-export var facing_to_entire_body = true
-export var use_accel = true
-export var saftey_input_threshold = 0.065
+@export var speed = 300
+@export var accel = 800
+@export var face_move_dir = true
+@export var facing_to_entire_body = true
+@export var use_accel = true
+@export var saftey_input_threshold = 0.065
 
 var input = Vector2()
 var last_non_zero_input = Vector2()

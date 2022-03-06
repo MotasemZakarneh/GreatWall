@@ -13,13 +13,13 @@ signal on_move_started
 signal on_stopped
 signal on_started_slowing
 
-export var saftey_dir_threshold = 0.065
-export var body_is_parent = true
-export var max_speed = 100
-export var slowing_rad = 20
-export var stopping_rad = 5
-export var slowing_factor = 1.5
-export var stopping_speed = 3
+@export var saftey_dir_threshold = 0.065
+@export var body_is_parent = true
+@export var max_speed = 100
+@export var slowing_rad = 20
+@export var stopping_rad = 5
+@export var slowing_factor = 1.5
+@export var stopping_speed = 3
 
 var is_moving : bool = false
 var dist : float = 0

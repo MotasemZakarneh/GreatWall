@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://dbhh2ol7obfem"]
 
-[ext_resource path="res://Menus/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Networking/Lobby/LobbyUI.tscn" type="PackedScene" id=2]
+[ext_resource type="Script" path="res://Networking/MainMenu.gd" id="1"]
+[ext_resource type="PackedScene" path="res://Networking/Lobby/LobbyUI.tscn" id="2"]
+[ext_resource type="Script" path="res://Networking/NetworkManager.gd" id="3"]
 
 [node name="Player App" type="Node2D"]
 
@@ -11,58 +12,58 @@ layer = 2
 [node name="Main Menu" type="Control" parent="Menus"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( "1" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menus/Main Menu"]
 anchor_bottom = 1.0
-margin_right = 200.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SinglePlayer" type="Button" parent="Menus/Main Menu/VBoxContainer"]
-margin_top = 390.0
-margin_right = 200.0
-margin_bottom = 410.0
+offset_top = 217.0
+offset_right = 180.0
+offset_bottom = 248.0
 text = "Single Player"
 
 [node name="MultiPlayer" type="Button" parent="Menus/Main Menu/VBoxContainer"]
-margin_top = 414.0
-margin_right = 200.0
-margin_bottom = 434.0
+offset_top = 252.0
+offset_right = 180.0
+offset_bottom = 283.0
 text = "MultiPlayer"
 
 [node name="Direct MP" type="Button" parent="Menus/Main Menu/VBoxContainer"]
-margin_top = 438.0
-margin_right = 200.0
-margin_bottom = 458.0
+offset_top = 287.0
+offset_right = 180.0
+offset_bottom = 318.0
 text = "Direct Multiplayer"
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Menus/Main Menu/VBoxContainer"]
-margin_top = 462.0
-margin_right = 200.0
-margin_bottom = 510.0
+offset_top = 322.0
+offset_right = 180.0
+offset_bottom = 383.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Menus/Main Menu/VBoxContainer/HBoxContainer"]
-margin_right = 200.0
-margin_bottom = 14.0
+offset_right = 180.0
+offset_bottom = 26.0
 text = "Player Name:"
-align = 1
 
 [node name="PlayerName" type="LineEdit" parent="Menus/Main Menu/VBoxContainer/HBoxContainer"]
-margin_top = 18.0
-margin_right = 200.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 180, 30 )
+rect_min_size = Vector2(180, 30)
+offset_top = 30.0
+offset_right = 180.0
+offset_bottom = 61.0
 text = "Hero1"
-align = 1
 
-[node name="LobbyUI" parent="." instance=ExtResource( 2 )]
+[node name="LobbyUI" parent="." instance=ExtResource( "2" )]
+
+[node name="NetworkManager" type="Node" parent="."]
+script = ExtResource( "3" )
 
 [connection signal="button_down" from="Menus/Main Menu/VBoxContainer/SinglePlayer" to="Menus/Main Menu" method="_on_SinglePlayer_button_down"]
 [connection signal="button_down" from="Menus/Main Menu/VBoxContainer/MultiPlayer" to="Menus/Main Menu" method="_on_MultiPlayer_button_down"]

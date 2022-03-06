@@ -1,0 +1,5 @@
+res://00_Game/Characters/Player/Player.gd
+res://01_JG/Art/GUI/UITheme.tres
+res://01_JG/Interactable System/Reaction System/Bases/Reaction.gd
+res://01_JG/SafeWaiter.gd
+res://Player App.tscn

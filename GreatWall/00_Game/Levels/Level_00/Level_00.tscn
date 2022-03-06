@@ -37,9 +37,7 @@ __meta__ = {
 "_gizmo_extents_": 20.0
 }
 
-[node name="Navigation2D" type="Navigation2D" parent="." groups=[
-"AIPath",
-]]
+[node name="Navigation2D" type="Navigation2D" parent="." groups=["AIPath"]]
 visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
@@ -61,9 +59,7 @@ offset = Vector2( 0, 488 )
 
 [node name="Chair_Blue" parent="YSort/Props" instance=ExtResource( 7 )]
 
-[node name="GameUI" type="CanvasLayer" parent="." groups=[
-"GameUI",
-]]
+[node name="GameUI" type="CanvasLayer" parent="." groups=["GameUI"]]
 pause_mode = 2
 script = ExtResource( 8 )
 

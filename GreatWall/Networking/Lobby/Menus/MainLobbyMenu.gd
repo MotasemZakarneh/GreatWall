@@ -3,10 +3,10 @@ extends BaseMenu
 signal on_back_pressed
 signal on_create_pressed
 
-export (PackedScene) var player_display_scene
-export (PackedScene) var match_display_scene
-export (NodePath) var player_displays_node_path
-export (NodePath) var matches_displays_node_path
+@export var player_display_scene:PackedScene
+@export var match_display_scene:PackedScene
+@export var player_displays_node_path:NodePath
+@export var matches_displays_node_path:NodePath
 
 var player_displays_head : VBoxContainer = null
 var matches_displays_head : Node = null

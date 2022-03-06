@@ -6,9 +6,9 @@ will change, thus, destroying everything else in view
 including the other reactions below this one.
 """
 
-export (PackedScene) var level : PackedScene
-export var do_fade = true
-export var fade_dur = -1
+@export (PackedScene) var level : PackedScene
+@export var do_fade = true
+@export var fade_dur = -1
 
 const fader_scene = preload("res://01_JG/Components/SceneFader/Fader.tscn")
 

@@ -1,12 +1,12 @@
 extends SimpleSaver
 class_name SimpleSettings
 
-export var load_on_ready = true
+@export var load_on_ready = true
 
 enum Languages { en, ar }
-export (Languages) var curr_lang = Languages.en
-export var sfx_vol = 0.85
-export var music_vol = 0.65
+@export var curr_lang : Languages = Languages.en
+@export var sfx_vol = 0.85
+@export var music_vol = 0.65
 
 var last_played_level = ""
 var is_first_run = true
@@ -20,7 +20,7 @@ func _i_ready():
 		last_played_level = get_last_played_level()
 		
 		if is_first_run:
-			yield(get_tree().create_timer(0.1),"timeout")
+			await get_tree().create_timer(0.1).timeout
 			is_first_run = false
 			update_data()
 	pass
@@ -66,7 +66,7 @@ func get_lang_of_id(lang:int)->String:
 		if i == int(lang):
 			return l
 		i = i + 1
-	return Languages[0]
+	return "en"
 
 func get_curr_lang()->String:
 	return get_lang_of_id(curr_lang)

@@ -1,7 +1,7 @@
 extends JG_Audio
 class_name SFXGroup
 
-export var play_rnd = true
+@export var play_rnd = true
 
 var last_played_element = -1
 var elements = []
@@ -24,7 +24,7 @@ func play(element_name:String,caller:Node2D):
 	pass
 
 func _get_playable_element(element_name:String)->SFXElement:
-	if not element_name.empty():
+	if element_name != "":
 		return _get_free_element_by_name(element_name)
 	elif play_rnd:
 		return _get_free_rnd_element()

@@ -2,12 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/A&C Percussion Loop #6.wav-a03f18c0b1667eec8e18cb449565ac6e.sample"
+uid="uid://bs2dyhsvw0qbo"
+path="res://.godot/imported/A&C Percussion Loop #6.wav-a03f18c0b1667eec8e18cb449565ac6e.sample"
 
 [deps]
 
 source_file="res://02_Music/A&C Percussion Loop #6.wav"
-dest_files=[ "res://.import/A&C Percussion Loop #6.wav-a03f18c0b1667eec8e18cb449565ac6e.sample" ]
+dest_files=["res://.godot/imported/A&C Percussion Loop #6.wav-a03f18c0b1667eec8e18cb449565ac6e.sample"]
 
 [params]
 

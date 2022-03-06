@@ -2,7 +2,7 @@ extends Control
 
 signal on_text_submitted(new_text)
 
-export var initial_text = "Welcome To Lobby"
+@export var initial_text = "Welcome To Lobby"
 
 func _on_LineEdit_text_changed(new_text):
 	$LineEdit.text = ""

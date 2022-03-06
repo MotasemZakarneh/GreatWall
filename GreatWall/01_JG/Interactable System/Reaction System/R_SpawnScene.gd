@@ -1,10 +1,10 @@
 extends Reaction
 
-export (PackedScene) var spawnable : PackedScene
+@export (PackedScene) var spawnable : PackedScene
 
-export var pos_group = ""
-export var match_pos_group = true
-export var parent_group = ""
+@export var pos_group = ""
+@export var match_pos_group = true
+@export var parent_group = ""
 
 var body = null
 

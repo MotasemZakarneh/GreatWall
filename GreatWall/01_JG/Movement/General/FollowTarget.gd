@@ -1,9 +1,9 @@
 extends MoveSystem
 class_name FollowTarget
 
-export var target_group = "Follow Target"
-export var speed = 300
-export var face_target = false
+@export var target_group = "Follow Target"
+@export var speed = 300
+@export var face_target = false
 
 var target
 var body:Node2D

@@ -1,7 +1,7 @@
 extends Control
 class_name BaseMenu
 
-export var auto_hide = true
+@export var auto_hide = true
 
 func _ready():
 	if auto_hide:

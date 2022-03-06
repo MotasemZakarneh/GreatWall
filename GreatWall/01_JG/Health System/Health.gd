@@ -8,12 +8,12 @@ Must be parented to a KinematicBody2D, RigidBody2D, or Area2D, or Static Body
 signal on_recieved_damage(damage,damage_sender,damage_type)
 signal on_dead(damage_sender,damage_type)
 
-export var max_health = 5
-export var fill_on_start = true
+@export var max_health = 5
+@export var fill_on_start = true
 
-export var is_dead = false
-export var curr_health = 0
-export var min_time_between_hits = 0.1
+@export var is_dead = false
+@export var curr_health = 0
+@export var min_time_between_hits = 0.1
 
 var can_take_damage = true
 var damage_cd_counter = 0

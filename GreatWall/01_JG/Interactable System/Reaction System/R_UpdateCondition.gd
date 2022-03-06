@@ -6,10 +6,10 @@ Updates in the condition in the source
 inst_conds_src_path is only used when use_global is false
 """
 
-export var key = "condition_key"
-export var to_state = true
-export(bool) var use_global = true
-export (NodePath) var inst_conds_src_path = ""
+@export var key = "condition_key"
+@export var to_state = true
+@export(bool) var use_global = true
+@export (NodePath) var inst_conds_src_path = ""
 
 var conds_source = null
 
